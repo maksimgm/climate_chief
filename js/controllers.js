@@ -42,11 +42,6 @@
 
 
 
-
-
-
-
-
 // app.controller('geolocCtrl', ['$scope', function($scope) {
 
 //   var geocoder;

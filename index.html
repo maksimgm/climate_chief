@@ -3,29 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <title>Essential Air</title>
-  <script async defer
+   <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBn7lMGzul-f5i72BrVHNgI8F12PDKvSOQ&callback=initMap">
     </script>
 <!-- Map canvas -->
   <style>
-    #map{
+    #map-canvas{
       height: 400px;
       width: 700px;
       border: 2px solid red;
     }
   </style>
 </head>
-
 <body>
+  <reverse-geocode lat="40.730885" lng="-73.997383" />
    <my-maps id="map-canvas"></my-maps>
 </body>
-<script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<!-- Angular -->
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
-<script src="./js/ngGeolocation.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
-<script src="./js/app.js" type="text/javascript"></script>
-<script src="./js/controllers.js" type="text/javascript"></script>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <!-- Angular -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
+  <script src="./js/app.js" type="text/javascript"></script>
+  <script src="./js/controllers.js" type="text/javascript"></script>
 </html>
