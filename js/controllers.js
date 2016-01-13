@@ -12,7 +12,7 @@
 
 
 // });
-app.controller('GoogleController', function($scope) {
+app.controller('MainController', function($scope) {
   var geocoder = new google.maps.Geocoder();
   $scope.geoFun = function() {
     geocoder.geocode( { "address": $scope.address }, function(results, status) {
