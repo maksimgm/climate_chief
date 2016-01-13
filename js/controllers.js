@@ -12,68 +12,24 @@
 
 
 // });
+app.controller('GoogleController', function($scope) {
+  var geocoder = new google.maps.Geocoder();
+  $scope.geoFun = function() {
+    geocoder.geocode( { "address": $scope.address }, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK && results.length > 0) {
+            $scope.lat = results[0].geometry.location.lat();
+            $scope.lng = results[0].geometry.location.lng();
+            $scope.initMap();
+        }
+    });
+  };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// app.controller('geolocCtrl', ['$scope', function($scope) {
-
-//   var geocoder;
-//   var map;
-//   $scope.initialize = function(){
-//       geocoder = new google.maps.Geocoder();
-//       map = new google.maps.Map(document.getElementById("map"),
-//       {
-//           zoom: 8,
-//           center: new google.maps.LatLng(22.7964,79.5410),
-//           mapTypeId: google.maps.MapTypeId.ROADMAP
-//       });
-//   };
-
-//   $scope.codeAddress = function()
-//   {
-//       var address = document.getElementById("address").value;
-//       geocoder.geocode( { 'address': address}, function(results, status)
-//       {
-//           if (status == google.maps.GeocoderStatus.OK)
-//           {
-//               map.setCenter(results[0].geometry.location);
-//               var marker = new google.maps.Marker(
-//               {
-//                   map: map,
-//                   position: results[0].geometry.location
-//               });
-//           }
-//           else
-//           {
-//               alert("Geocode was not successful for the following reason: " + status);
-//           }
-//       });
-//   };
-// }]);
+  $scope.initMap = function() {
+    // Create a map object and specify the DOM element for display.
+    var map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: $scope.lat, lng: $scope.lng},
+      scrollwheel: false,
+      zoom: 12
+    });
+  };
+});
