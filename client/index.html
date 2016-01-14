@@ -22,26 +22,25 @@
   <body>
   <h1></h1>
     <div ng-controller='MainController' class="container-fluid homeWrapper">
-    <div class="row">
-      <form ng-submit="geoFun()" class="col-xs-6 col col-xs-offset-2" role="form">
-          <input type="text" placeholder="Enter a Location" ng-model="address" id="searchTextField" class="form-control">
-          <input type="submit" class="btn btn-success submitButton">
-      </form>
-      <div id="map" class="col-xs-8 col-xs-offset-1 ">
-        
-      </div>
-      
-        <div class="col-xs-2">
-          <a class="btn btn-md btn-primary infoBtn">Air Quality</a>
-          <a class="btn btn-md btn-primary infoBtn">Allergens</a>
-          <a class="btn btn-md btn-primary infoBtn">Carbon Emi.</a>
-          <a class="btn btn-md btn-primary infoBtn">4</a>
+      <div class="row">
+        <div >
+          <form ng-submit="geoFun()" role="form" class="col-xs-6 col-xs-offset-1">
+              <input type="text" placeholder="Enter a Location" ng-model="address" id="searchTextField" class="form-control pull-left">
+              <input type="submit" class="btn btn-success submitButton pull-right col-xs--2 col-xs-offset-1">
+          </form>
         </div>
-      
-    </div>
+      <div id="map" class="col-xs-8 col-xs-offset-1 "></div>
+      </div>
+        <div class="col-xs-2">
+          <a class="btn btn-md btn-primary infoBtn" ng-click="toggleModal('Air')">Air</a>
+          <a class="btn btn-md btn-primary infoBtn" ng-click="toggleModal('Allergens')">Allergens</a>
+          <a class="btn btn-md btn-primary infoBtn" ng-click="toggleModal('Carbon Emi')">Carbon Emi</a>
+          <a class="btn btn-md btn-primary infoBtn" ng-click="toggleModal('Blah')">Blah</a>
+          <modal visible="showModal"></modal>
+        </div>
       <h2>BREEZE-O-METER DATA:</h2>
       {{data}}
-
     </div>
+
   </body>
 </html>

@@ -2,6 +2,7 @@
   height: 400px;
   /*width: 90%;*/
   border: 2px solid red;
+  border-radius: 5px;
 }
 .homeWrapper{
   display: block;
@@ -16,9 +17,5 @@
 }
 #searchTextField{
   margin: 10px 0;
-  float: left;
-}
-.submitButton{
-  float: right;
-
+ 
 }

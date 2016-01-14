@@ -1,17 +1,8 @@
 var app = angular.module("EssentialAir", []);
 
-var mymodal = angular.module('mymodal', []);
 
-mymodal.controller('MainCtrl', function ($scope) {
-    $scope.showModal = false;
-    $scope.buttonClicked = "";
-    $scope.toggleModal = function(btnClicked){
-        $scope.buttonClicked = btnClicked;
-        $scope.showModal = !$scope.showModal;
-    };
-  });
 
-mymodal.directive('modal', function () {
+app.directive('modal', function () {
     return {
       template: '<div class="modal fade">' + 
           '<div class="modal-dialog">' + 
