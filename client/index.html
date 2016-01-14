@@ -23,23 +23,22 @@
   <h1></h1>
     <div ng-controller='MainController' class="container-fluid homeWrapper">
       <div class="row">
-        <div >
-          <form ng-submit="geoFun()" role="form" class="col-xs-6 col-xs-offset-1">
+        <div>
+<!--           <form ng-submit="breezeData()" role="form" class="col-xs-6 col-xs-offset-1">
               <input type="text" placeholder="Enter a Location" ng-model="address" id="searchTextField" class="form-control pull-left">
               <input type="submit" class="btn btn-success submitButton pull-right col-xs--2 col-xs-offset-1">
-          </form>
+          </form> -->
+          <input id="pac-input" class="controls" type="text"
+              placeholder="Enter a location">
+          <input type="submit" class="btn btn-success btn-sm submitButton">
+          <div id="map" class="col-xs-8 col-xs-offset-1"></div>
         </div>
-      <div id="map" class="col-xs-8 col-xs-offset-1 "></div>
-      </div>
         <div class="col-xs-2">
-          <a class="btn btn-md btn-primary infoBtn" ng-click="toggleModal('Air')">Air</a>
-          <a class="btn btn-md btn-primary infoBtn" ng-click="toggleModal('Allergens')">Allergens</a>
-          <a class="btn btn-md btn-primary infoBtn" ng-click="toggleModal('Carbon Emi')">Carbon Emi</a>
-          <a class="btn btn-md btn-primary infoBtn" ng-click="toggleModal('Blah')">Blah</a>
-          <modal visible="showModal"></modal>
+          <button>filler </button>
         </div>
       <h2>BREEZE-O-METER DATA:</h2>
       {{data}}
+      </div>
     </div>
 
   </body>
