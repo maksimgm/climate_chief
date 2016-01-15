@@ -35,26 +35,32 @@
           <button class="informationBtn" ng-click="firstToggle()">Air quality data and desc</button>
           
         
-          <button class="informationBtn" ng-click="divToggle()">health recommendations</button>
-          <div class="dataWrapper" ng-show=""></div>
+          <button class="informationBtn" ng-click="secondToggle()">health recommendations</button>
 
-          <button class="informationBtn">dominant pollutiona nd pollution effects</button>
-          <div class="dataWrapper" ng-show=""></div>
+          <button class="informationBtn" ng-click="thirdToggle()">dominant pollutiona nd pollution effects</button>
 
-          <button class="informationBtn">filler </button>
-          <div class="dataWrapper" ng-show=""></div>
+          <button class="informationBtn" ng-click="fourthToggle()">filler</button>
 
         </div>
-        <div class="dataWrapper" ng-show="firstWrapper">
-          <h3>AIR Description</h3>{{data.airQualityDesc}}
-          <h3>Air quality index</h3>{{data.airQualityIndex}}
+        <div class="col-xs-12">
+          <div class="dataWrapper" ng-show="firstWrapper">
+            <h3>AIR Description</h3>{{data.airQualityDesc}}
+            <h3>Air quality index</h3>{{data.airQualityIndex}}
+          </div>
+
+          <div class="dataWrapper" ng-show="secondWrapper">
+            <h3>HEALTH RECCOMMENDAIONS</h3>{{data.healthRecommendations}}
+            <h3>DOMINANT POLLUTANTS</h3>{{data.dominantPollutant}}
+          </div>
+        
+          <div class="dataWrapper" ng-show="thirdWrapper">
+            <h3>POLLUTION EFFECTS</h3>{{data.pollutionEffects}}
+          </div>
+          <div class="dataWrapper" ng-show="fourthWrapper">
+            <h4>THIS IS FILLER TEXT</h4>
+          </div>
         </div>
-      <h2>BREEZE-O-METER DATA:</h2>
-      <h3>HEALTH RECCOMMENDAIONS</h3>{{data.healthRecommendations}}
-      <h3>DOMINANT POLLUTANTS</h3>{{data.dominantPollutant}}
-      <h3>POLLUTION EFFECTS</h3>{{data.pollutionEffects}}
-
-
+      <h1>{{error_message}}</h1>
       
       </div>
       

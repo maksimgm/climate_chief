@@ -7,22 +7,42 @@
 app.controller('MainController', function($scope, $http) {
   
 
-  // BTN DIV TOGGLE, TO ACCESS INFO ON 
+  // BTN DIV TOGGLE, 
   $scope.firstWrapper = false;
   $scope.firstToggle = function(){
     $scope.firstWrapper = !$scope.firstWrapper;
   };
-
-  $scope.fillerClick = function(){
-
+// second wrapper
+  $scope.secondWrapper = false;
+  $scope.secondToggle = function(){
+    $scope.secondWrapper = !$scope.secondWrapper;
   };
 
+  $scope.thirdWrapper = false;
+  $scope.thirdToggle = function(){
+    $scope.thirdWrapper = !$scope.thirdWrapper;
+  };
+
+  $scope.fourthWrapper = false;
+  $scope.fourthToggle = function(){
+    $scope.fourthWrapper = !$scope.fourthWrapper;
+  };
+  // $scope.fillerClick = function(){
+
+  // };
+// Air Now detailed air information... API call
+// $http.get(url)
 
 
-
+// breezeOmeter air info... API call
   var breezeData = function(){
     var url = "https://api.breezometer.com/baqi/?lat="+ $scope.lat +"&lon="+ $scope.lng +"&key=1827fecc1c064b05b2e2d07f90961a74";
     $http.get(url).then(function(data){
+      if(data.data.data_valid === false){
+        // $scope.error_message = data.data.error.message;
+        alert(data.data.error.message);
+        return;
+      }
       $scope.data = {
         airQualityDesc: data.data.breezometer_description,
         airQualityIndex: data.data.breezometer_aqi,
@@ -33,9 +53,6 @@ app.controller('MainController', function($scope, $http) {
       // error handeling... why is this not working????
       // ERROR HANDELING!!!
       console.log(data.data_valid);
-      if($scope.data.data_valid === false){
-        alert("Data not found!");
-      }
     });
   };
 

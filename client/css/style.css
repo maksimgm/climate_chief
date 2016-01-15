@@ -10,7 +10,7 @@
   padding: 5px;
   border: solid black 1px;
   width: 100%;
-  position: relative;
+  position: absolute;
 }
 .btn.infoBtn{
   margin: 20px 0px;
@@ -41,7 +41,7 @@
   background-color: teal;
   position: absolute;
   left: 72px;
-  opacity: .9;
+  opacity: .7;
 }
 /*wraps directional buttons to the right of the map*/
 /*
