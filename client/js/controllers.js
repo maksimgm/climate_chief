@@ -4,7 +4,7 @@
 // CONSIDER USING REDIS TO CACHE USER SEARCH
 
 // });
-app.controller('MainController', function($scope, $http) {
+app.controller('MainController', function($scope, $http, $filter) {
   
 
   // BTN DIV TOGGLE, 
@@ -31,7 +31,39 @@ app.controller('MainController', function($scope, $http) {
 
   // };
 // Air Now detailed air information... API call
-// $http.get(url)
+
+  // use this date to plug into the airData
+  $scope.filterdatetime = $filter('date')(new Date(), 'yyyy MM dd');
+
+
+  // var airData = function(){
+  //   var url = "http://www.airnowapi.org/aq/forecast/latLong/?callback=JSON_CALLBACK&format=application/json&latitude=39.0509&longitude=-121.4453&date=2016-01-15&distance=25&API_KEY=708F86AF-4832-4810-A182-AFA9466E23CB";
+  //   $http.get({method:"JSONP", url:url})
+  //     .then(function(res){
+  //       console.log(res);
+  //   },function(err){
+  //     console.log(err);
+  //   });
+  // };
+
+  // airData();
+
+  var airData = function(){
+    // var url =  "http://itunes.apple.com/&search?term=jack+johnson";
+      $http({method: 'jsonp', url: "http://itunes.apple.com/&search?term=jack+johnson"}).
+      success(function(data) {
+        $scope.countries = data;
+        console.log('success');
+      }).
+      error(function(data) {
+        console.log('error');
+    });
+  };
+
+  airData();
+
+
+
 
 
 // breezeOmeter air info... API call
@@ -84,7 +116,7 @@ app.controller('MainController', function($scope, $http) {
       
 
       // If the place has a geometry, then present it on a map.
-      if (place.geometry.viewport) {
+      if(place.geometry.viewport) {
         map.fitBounds(place.geometry.viewport);
       } else {
         map.setCenter(place.geometry.location);
@@ -97,6 +129,7 @@ app.controller('MainController', function($scope, $http) {
       $scope.lat = place.geometry.location.lat();
       $scope.lng = place.geometry.location.lng();
       breezeData();
+      // airData();
       // CHECK TO SEE IF BREEZEOMETER DATA IS AVAILABLE. IF IT IS NOT AVAILABLE THEN RETURN A FLASH MESSAGE.
     });
   };
