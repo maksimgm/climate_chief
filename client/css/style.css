@@ -26,3 +26,9 @@
   width: 300px;
   margin: 10px 0;
 }
+.informationBtn{
+  display: block;
+  margin: 10px 0px;
+  border-radius: 10px;
+  background-color: lightblue;
+}
