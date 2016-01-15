@@ -9,7 +9,8 @@
   background-color: gold;
   padding: 5px;
   border: solid black 1px;
-  width: 90%;
+  width: 100%;
+  position: relative;
 }
 .btn.infoBtn{
   margin: 20px 0px;
@@ -34,7 +35,16 @@
 }
 
 .dataWrapper{
-  width: 80%;
-  height: 100px;
+  display: inline-block;
+  width: 66.5%;
+  height: 400px;
   background-color: teal;
+  position: absolute;
+  left: 72px;
+  opacity: .9;
 }
+/*wraps directional buttons to the right of the map*/
+/*
+.btnWrapper{
+
+}*/

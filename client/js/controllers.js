@@ -9,7 +9,7 @@ app.controller('MainController', function($scope, $http) {
 
   // BTN DIV TOGGLE, TO ACCESS INFO ON 
   $scope.firstWrapper = false;
-  $scope.divToggle = function(){
+  $scope.firstToggle = function(){
     $scope.firstWrapper = !$scope.firstWrapper;
   };
 
@@ -31,6 +31,7 @@ app.controller('MainController', function($scope, $http) {
         pollutionEffects: data.data.dominant_pollutant_text.effects
       };
       // error handeling... why is this not working????
+      // ERROR HANDELING!!!
       console.log(data.data_valid);
       if($scope.data.data_valid === false){
         alert("Data not found!");

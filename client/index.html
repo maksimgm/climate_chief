@@ -24,30 +24,32 @@
     <div ng-controller='MainController' class="container-fluid homeWrapper">
       <div class="row">
         <div>
-<!--           <form ng-submit="breezeData()" role="form" class="col-xs-6 col-xs-offset-1">
-              <input type="text" placeholder="Enter a Location" ng-model="address" id="searchTextField" class="form-control pull-left">
-              <input type="submit" class="btn btn-success submitButton pull-right col-xs--2 col-xs-offset-1">
-          </form> -->
+        <!-- google map search bar -->
           <input id="pac-input" class="controls" type="text"
               placeholder="Enter a location">
-          <!-- <input type="submit" class="btn btn-success btn-sm submitButton"> -->
+              <!-- google map -->
           <div id="map" class="col-xs-8 col-xs-offset-1"></div>
         </div>
-        <div class="col-xs-2">
-
-          <button class="informationBtn" ng-click="divToggle()">Air quality data and desc</button>
-          <div class="dataWrapper" ng-show="firstWrapper"></div>
+        <div class="col-xs-2 btnWrapper">
+<!-- aside buttons...toogle between information -->
+          <button class="informationBtn" ng-click="firstToggle()">Air quality data and desc</button>
+          
         
-          <button class="informationBtn">health recommendations</button>
-          <div class=""></div>
+          <button class="informationBtn" ng-click="divToggle()">health recommendations</button>
+          <div class="dataWrapper" ng-show=""></div>
+
           <button class="informationBtn">dominant pollutiona nd pollution effects</button>
-          <div class=""></div>
+          <div class="dataWrapper" ng-show=""></div>
+
           <button class="informationBtn">filler </button>
-          <div class=""></div>
+          <div class="dataWrapper" ng-show=""></div>
+
+        </div>
+        <div class="dataWrapper" ng-show="firstWrapper">
+          <h3>AIR Description</h3>{{data.airQualityDesc}}
+          <h3>Air quality index</h3>{{data.airQualityIndex}}
         </div>
       <h2>BREEZE-O-METER DATA:</h2>
-      <h3>AIR Description</h3>{{data.airQualityDesc}}
-      <h3>Air quality index</h3>{{data.airQualityIndex}}
       <h3>HEALTH RECCOMMENDAIONS</h3>{{data.healthRecommendations}}
       <h3>DOMINANT POLLUTANTS</h3>{{data.dominantPollutant}}
       <h3>POLLUTION EFFECTS</h3>{{data.pollutionEffects}}
