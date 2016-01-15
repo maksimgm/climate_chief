@@ -5,22 +5,20 @@
 
 // });
 app.controller('MainController', function($scope, $http) {
-  // wrap info in a function
   
-  // var geocoder = new google.maps.Geocoder();
-  // $scope.geoFun = function() {
-  //   geocoder.geocode( { "address": $scope.address }, function(results, status) {
-  //       if (status == google.maps.GeocoderStatus.OK && results.length > 0) {
-  //           $scope.lat = results[0].geometry.location.lat();
-  //           $scope.lng = results[0].geometry.location.lng();
-  //           initMap();
-  //           breezeData();
-  //           // call breeze function to get access to 
-  //       }else if(status !== google.maps.GeocoderStatus.OK){
-  //         alert("That Information is not available.");
-  //       }
-  //   });
-  // };
+
+  // BTN DIV TOGGLE, TO ACCESS INFO ON 
+  $scope.firstWrapper = false;
+  $scope.divToggle = function(){
+    $scope.firstWrapper = !$scope.firstWrapper;
+  };
+
+  $scope.fillerClick = function(){
+
+  };
+
+
+
 
   var breezeData = function(){
     var url = "https://api.breezometer.com/baqi/?lat="+ $scope.lat +"&lon="+ $scope.lng +"&key=1827fecc1c064b05b2e2d07f90961a74";
