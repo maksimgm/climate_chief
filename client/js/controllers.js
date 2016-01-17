@@ -69,19 +69,43 @@ app.controller('MainController', function($scope, $http, $filter) {
   solarEnergy = function(){
     var url = "https://developer.nrel.gov/api/solar/solar_resource/v1.json?api_key=aaeAF66WRB6IQou8P3WqLT7XQjXROd27QuUS4FFG&lat="+ $scope.lat +"&lon="+ $scope.lng;
     $http.get(url).then(function(solar){
-      var objDni = solar.data.outputs.avg_dni,
+      var objDni = solar.data.outputs.avg_dni.monthly,
        DniArr = _(objDni).toArray(),
-      objGhi = solar.data.outputs.avg_ghi,
+      objGhi = solar.data.outputs.avg_ghi.monthly,
        GhiArr = _(objGhi).toArray(),
-      objLatTilt = solar.data.outputs.avg_lat_tilt,
+      objLatTilt = solar.data.outputs.avg_lat_tilt.monthly,
        LatTiltArr = _(objLatTilt).toArray();
-
+    // do the same for other two arrays
+      DniArr.forEach(function(ele,i,arr){
+        console.log(ele);
+      });
           
     });
   };
 
 
+  weather = function(){
+    var url = "http://api.openweathermap.org/data/2.5/weather?lat="+ $scope.lat+"&lon="+ $scope.lng+"&appid=2de143494c0b295cca9337e1e96b00e0"     
+    $http.get(url).then(function(weather){
+      // console.log(weather);
+      // CLOUD NUMBER...WHAT DOES THIS MEAN???
+      // console.log(weather.data.clouds);
+      // main information
+       console.log("wind degree: "+weather.data.wind.deg);
+       console.log("Winde Speed: "+weather.data.wind.speed);
 
+      // console.log("Temp: "+weather.data.main.temp);
+      // console.log("Temp MIN: "+weather.data.main.temp_min);
+      // console.log("Temp MAX: "+weather.data.main.temp_max);
+      // console.log("Pressure: "+weather.data.main.pressure);
+      // console.log("humidity: "+weather.data.main.humidity);
+
+
+      // console.log(weather.data.main.rain);
+      // console.log(weather.data.main.weather);
+    });
+  };
+  
 
 
 
@@ -149,7 +173,8 @@ app.controller('MainController', function($scope, $http, $filter) {
       $scope.lat = place.geometry.location.lat();
       $scope.lng = place.geometry.location.lng();
       breezeData();
-      solarEnergy();
+      // solarEnergy();
+      weather();
       // airData();
       // CHECK TO SEE IF BREEZEOMETER DATA IS AVAILABLE. IF IT IS NOT AVAILABLE THEN RETURN A FLASH MESSAGE.
     });
