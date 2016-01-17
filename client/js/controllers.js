@@ -44,34 +44,32 @@ app.controller('MainController', function($scope, $http, $filter) {
   $scope.filterdatetime = $filter('date')(new Date(), 'yyyy MM dd');
 
 
-  // var airData = function(){
-  //   var url = "http://www.airnowapi.org/aq/forecast/latLong/?callback=JSON_CALLBACK&format=application/json&latitude=39.0509&longitude=-121.4453&date=2016-01-15&distance=25&API_KEY=708F86AF-4832-4810-A182-AFA9466E23CB";
-  //   $http.get({method:"JSONP", url:url})
-  //     .then(function(res){
-  //       console.log(res);
-  //   },function(err){
-  //     console.log(err);
-  //   });
-  // };
-
-  // airData();
-
-    // var url =  "http://itunes.apple.com/&search?term=jack+johnson";
-  // airData = function(){
-  //     $http({
-  //       method: 'jsonp',
-  //       url: "https://itunes.apple.com/search?term=jack+johnson"
-  //     }).then(function successCb(res){
-  //       console.log(res);
-  //     }), function errorCb(res){
-
-  //      console.log(res);
-  //       }
-   
-  // };
-  // airData();
-
-
+// gauge for air quality
+airQualityIndexGauage = function(val){
+  var opts = {
+    lines: 12,
+    angle: 0.5,
+    lineWidth: 0.1,
+    limitMax: 'false', 
+    percentColors: [[0.0, "#cccccc" ], [0.50, "#ffff00"], [1.0, "#ff0000"]], // !!!!
+    strokeColor: '#E0E0E0',
+    generateGradient: true,
+      pointer: {
+      length: 0.9, // The radius of the inner circle
+      strokeWidth: 0.035 // The rotation offset
+      // color: '#000000' // Fill color
+    },
+    colorStart: '#cdcdcd',   // Colors
+    colorStop: '#ff0000',    // just experiment with them
+    strokeColor: '#000000',   // to see which ones work best for you
+    generateGradient: true
+    };
+    var target = document.getElementById('foo'); // your canvas element
+    var gauge = new Donut(target).setOptions(opts); // create sexy gauge!
+    gauge.maxValue = 100; // set max gauge value
+    gauge.animationSpeed = 32; // set animation speed (32 is default value)
+    gauge.set(val); // set actual value
+};
 
   // National Resource Energy Lab... Solar energy... Lat and Long.
   solarEnergy = function(){
@@ -134,9 +132,7 @@ app.controller('MainController', function($scope, $http, $filter) {
         dominantPollutant: data.data.dominant_pollutant_description,
         pollutionEffects: data.data.dominant_pollutant_text.effects
       };
-      // error handeling... why is this not working????
-      // ERROR HANDELING!!!
-      // console.log(data.data_valid);
+      airQualityIndexGauage($scope.data.airQualityIndex);      
     });
   };
 

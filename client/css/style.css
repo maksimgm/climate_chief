@@ -38,16 +38,31 @@
   display: inline-block;
   width: 66.5%;
   height: 400px;
-  background-color: teal;
+  background-color: #E0E0E0;
   position: absolute;
   left: 13.9vh;
   bottom: 0vh;
-  opacity: .7;
+  opacity: .9;
   padding: 10px;
 
+}
+.airQualityIndex{
+  display: inline-block;
+  height: 150px;
+  width: 40%;
+}
+.airDomPollutant{
+  display: inline-block;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  height: 350px;
+  width: 55%; 
+  float: right;
+  background-color: green;
 }
 /*wraps directional buttons to the right of the map*/
 /*
 .btnWrapper{
 
 }*/
+

@@ -18,6 +18,8 @@
     <script src="js/angular-google-maps-geocoder.js"></script>
     <script src="js/app.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js'></script>
+    <script src="http://bernii.github.com/gauge.js/dist/gauge.min.js"></script>
+    <script src="bower_components/angular-chart.js/dist/angular-chart.js"></script>
     <script src="js/controllers.js"></script>
   </head>
   <body>
@@ -33,7 +35,7 @@
         </div>
         <div class="col-xs-2 btnWrapper">
 <!-- aside buttons...toogle between information -->
-          <button class="informationBtn" ng-click="firstToggle()">Air quality data and desc</button>
+          <button class="informationBtn" ng-click="firstToggle()">Air Quality</button>
           
         
           <button class="informationBtn" ng-click="secondToggle()">health recommendations</button>
@@ -45,17 +47,22 @@
         </div>
         <div class="col-xs-12">
           <div class="dataWrapper" ng-show="firstWrapper">
-            <h3>AIR Description</h3>{{data.airQualityDesc}}
-            <h3>Air quality index</h3>{{data.airQualityIndex}}
-            <h2>DISPLAY THE DATA ABOVE ON A METER</h2>
+            <div class="airQualityIndex">
+              <p >Air quality: </p>{{data.airQualityIndex}}
+              <p>Air Description: </p>{{data.airQualityDesc}}
+                <canvas id="foo"></canvas>
+            </div>
+            <div class="airDomPollutant">
+              <h3>DOMINANT POLLUTANTS</h3>{{data.dominantPollutant}}
+              <h3>HEALTH RECCOMMENDAIONS</h3>{{data.healthRecommendations}}
+              <h3>POLLUTION EFFECTS</h3>{{data.pollutionEffects}}
+            </div>
+            
           </div>
           <div class="dataWrapper" ng-show="secondWrapper">
-            <h3>HEALTH RECCOMMENDAIONS</h3>{{data.healthRecommendations}}
-            <h3>DOMINANT POLLUTANTS</h3>{{data.dominantPollutant}}
           </div>
         
           <div class="dataWrapper" ng-show="thirdWrapper">
-            <h3>POLLUTION EFFECTS</h3>{{data.pollutionEffects}}
           </div>
           <div class="dataWrapper" ng-show="fourthWrapper">
             <h4>THIS IS FILLER TEXT</h4>
