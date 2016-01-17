@@ -10,22 +10,30 @@ app.controller('MainController', function($scope, $http, $filter) {
   // BTN DIV TOGGLE, 
   $scope.firstWrapper = false;
   $scope.firstToggle = function(){
-    $scope.firstWrapper = !$scope.firstWrapper;
+    if(($scope.secondWrapper || $scope.thirdWrapper || $scope.fourthWrapper) === false){
+      $scope.firstWrapper = !$scope.firstWrapper;
+    }
   };
 // second wrapper
   $scope.secondWrapper = false;
   $scope.secondToggle = function(){
-    $scope.secondWrapper = !$scope.secondWrapper;
+    if(($scope.firstWrapper || $scope.thirdWrapper || $scope.fourthWrapper) === false){
+      $scope.secondWrapper = !$scope.secondWrapper;
+    }
   };
 
   $scope.thirdWrapper = false;
   $scope.thirdToggle = function(){
-    $scope.thirdWrapper = !$scope.thirdWrapper;
+    if(($scope.firstWrapper || $scope.secondWrapper || $scope.fourthWrapper) === false){
+      $scope.thirdWrapper = !$scope.thirdWrapper;
+    }
   };
 
   $scope.fourthWrapper = false;
   $scope.fourthToggle = function(){
-    $scope.fourthWrapper = !$scope.fourthWrapper;
+    if(($scope.firstWrapper || $scope.secondWrapper || $scope.thirdWrapper) === false){
+      $scope.fourthWrapper = !$scope.fourthWrapper;
+    }
   };
   // $scope.fillerClick = function(){
 
