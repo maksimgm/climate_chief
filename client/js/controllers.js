@@ -48,19 +48,39 @@ app.controller('MainController', function($scope, $http, $filter) {
 
   // airData();
 
-  var airData = function(){
     // var url =  "http://itunes.apple.com/&search?term=jack+johnson";
-      $http({method: 'jsonp', url: "http://itunes.apple.com/&search?term=jack+johnson"}).
-      success(function(data) {
-        $scope.countries = data;
-        console.log('success');
-      }).
-      error(function(data) {
-        console.log('error');
+  // airData = function(){
+  //     $http({
+  //       method: 'jsonp',
+  //       url: "https://itunes.apple.com/search?term=jack+johnson"
+  //     }).then(function successCb(res){
+  //       console.log(res);
+  //     }), function errorCb(res){
+
+  //      console.log(res);
+  //       }
+   
+  // };
+  // airData();
+
+
+
+  // National Resource Energy Lab... Solar energy... Lat and Long.
+  solarEnergy = function(){
+    var url = "https://developer.nrel.gov/api/solar/solar_resource/v1.json?api_key=aaeAF66WRB6IQou8P3WqLT7XQjXROd27QuUS4FFG&lat="+ $scope.lat +"&lon="+ $scope.lng;
+    $http.get(url).then(function(solar){
+      var objDni = solar.data.outputs.avg_dni,
+       DniArr = _(objDni).toArray(),
+      objGhi = solar.data.outputs.avg_ghi,
+       GhiArr = _(objGhi).toArray(),
+      objLatTilt = solar.data.outputs.avg_lat_tilt,
+       LatTiltArr = _(objLatTilt).toArray();
+
+          
     });
   };
 
-  airData();
+
 
 
 
@@ -72,8 +92,8 @@ app.controller('MainController', function($scope, $http, $filter) {
     $http.get(url).then(function(data){
       if(data.data.data_valid === false){
         // $scope.error_message = data.data.error.message;
-        alert(data.data.error.message);
-        return;
+        // alert(data.data.error.message);
+        // return;
       }
       $scope.data = {
         airQualityDesc: data.data.breezometer_description,
@@ -84,7 +104,7 @@ app.controller('MainController', function($scope, $http, $filter) {
       };
       // error handeling... why is this not working????
       // ERROR HANDELING!!!
-      console.log(data.data_valid);
+      // console.log(data.data_valid);
     });
   };
 
@@ -129,6 +149,7 @@ app.controller('MainController', function($scope, $http, $filter) {
       $scope.lat = place.geometry.location.lat();
       $scope.lng = place.geometry.location.lng();
       breezeData();
+      solarEnergy();
       // airData();
       // CHECK TO SEE IF BREEZEOMETER DATA IS AVAILABLE. IF IT IS NOT AVAILABLE THEN RETURN A FLASH MESSAGE.
     });
