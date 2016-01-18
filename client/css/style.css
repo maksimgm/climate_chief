@@ -38,7 +38,7 @@
 }
 .dataWrapper{
   display: inline-block;
-  width: auto;
+  width: 66.5%;
   height: 400px;
   background-color: #E0E0E0;
   position: absolute;
@@ -89,3 +89,7 @@
   float:left;
 }
 
+.weatherShit{
+  background-color: teal;
+  height: 350px;
+}

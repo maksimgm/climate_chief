@@ -54,38 +54,38 @@ app.controller('MainController', function($scope, $http, $filter) {
   // BTN DIV TOGGLE, 
   $scope.firstWrapper = false;
   $scope.firstToggle = function(){
-    if(($scope.secondWrapper || $scope.thirdWrapper || $scope.fourthWrapper) === false){
+    if(($scope.secondWrapper || $scope.thirdWrapper) === false){
       $scope.firstWrapper = !$scope.firstWrapper;
     }
   };
 // second wrapper
   $scope.secondWrapper = false;
   $scope.secondToggle = function(){
-    if(($scope.firstWrapper || $scope.thirdWrapper || $scope.fourthWrapper) === false){
+    if(($scope.firstWrapper || $scope.thirdWrapper) === false){
       $scope.secondWrapper = !$scope.secondWrapper;
     }
   };
 
   $scope.thirdWrapper = false;
   $scope.thirdToggle = function(){
-    if(($scope.firstWrapper || $scope.secondWrapper || $scope.fourthWrapper) === false){
+    if(($scope.firstWrapper || $scope.secondWrapper) === false){
       $scope.thirdWrapper = !$scope.thirdWrapper;
     }
   };
 
-  $scope.fourthWrapper = false;
-  $scope.fourthToggle = function(){
-    if(($scope.firstWrapper || $scope.secondWrapper || $scope.thirdWrapper) === false){
-      $scope.fourthWrapper = !$scope.fourthWrapper;
-    }
-  };
+  // $scope.fourthWrapper = false;
+  // $scope.fourthToggle = function(){
+  //   if(($scope.firstWrapper || $scope.secondWrapper || $scope.thirdWrapper) === false){
+  //     $scope.fourthWrapper = !$scope.fourthWrapper;
+  //   }
+  // };
   // $scope.fillerClick = function(){
 
   // };
 // Air Now detailed air information... API call
 
   // use this date to plug into the airData
-  $scope.filterdatetime = $filter('date')(new Date(), 'yyyy MM dd');
+  // $scope.filterdatetime = $filter('date')(new Date(), 'yyyy MM dd');
 
 
 // gauge for air quality
@@ -139,22 +139,20 @@ airQualityIndexGauage = function(val){
     $http.get(url).then(function(weather){
       
       // CLOUD NUMBER...WHAT DOES THIS MEAN???
-      // console.log(weather.data.clouds);
-      // // main information
-      //  console.log("wind degree: "+weather.data.wind.deg);
-      //  console.log("Winde Speed: "+weather.data.wind.speed);
-
+    // LEFT CLUSTER
+      // console.log("DESCRIPTITON1: "+weather.data.weather[0].description);
+      // console.log("DESCRIPTITON2: "+weather.data.weather[1].description);
       // console.log("Temp: "+weather.data.main.temp);
       // console.log("Temp MIN: "+weather.data.main.temp_min);
       // console.log("Temp MAX: "+weather.data.main.temp_max);
+      
+      // RIGHT CLUSTER
+      // console.log("CLOUDS: "+weather.data.clouds);
+      // // main information
       // console.log("Pressure: "+weather.data.main.pressure);
       // console.log("humidity: "+weather.data.main.humidity);
-      // console.log("clouds: "+weather.data.clouds);
-
-
-      console.log("DESCRIPTITON1: "+weather.data.weather[0].description);
-      console.log("DESCRIPTITON2: "+weather.data.weather[1].description);
-      
+      //  console.log("wind degree: "+weather.data.wind.deg);
+      //  console.log("Wind Speed: "+weather.data.wind.speed);
       
     });
   };
