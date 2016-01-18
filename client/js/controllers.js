@@ -129,7 +129,7 @@ airQualityIndexGauage = function(val){
       // return $scope.DniArr.forEach(function(ele,i,arr){
       //   console.log(ele);
       // });
-          
+          console.log($scope.DniArr);
     });
   };
 

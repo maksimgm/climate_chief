@@ -34,7 +34,7 @@
   background-color: lightblue;
 }
 .parentInfoContainer{
-  position: relative;
+  /*position: relative;*/
 }
 .dataWrapper{
   display: inline-block;
@@ -42,7 +42,7 @@
   height: 400px;
   background-color: #E0E0E0;
   position: absolute;
-  left: 13.9vh;
+  left: 8.33333333%;
   bottom: 0vh;
   opacity: .9;
   padding: 10px;
@@ -92,4 +92,5 @@
 .weatherShit{
   background-color: teal;
   height: 350px;
+  padding: 20px 10px;
 }
