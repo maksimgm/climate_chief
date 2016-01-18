@@ -65,4 +65,21 @@
 .btnWrapper{
 
 }*/
+#container{
+  width: 400px;
+  margin: : 0 auto;
+  height: 380px;
+}
 
+#dniInformation{
+  display: inline-block;
+  font-size: 12px;
+  overflow: scroll;
+  height: 150px;
+  width: 150px;
+  background: white;
+  color: black;
+  font-weight: bold;
+  border: 1px black solid;
+  padding: 2px;
+}

@@ -19,7 +19,8 @@
     <script src="js/app.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js'></script>
     <script src="http://bernii.github.com/gauge.js/dist/gauge.min.js"></script>
-    <script src="bower_components/angular-chart.js/dist/angular-chart.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="js/controllers.js"></script>
   </head>
   <body>
@@ -59,7 +60,12 @@
             </div>
             
           </div>
-          <div class="dataWrapper" ng-show="secondWrapper">
+          <div class="dataWrapper " ng-show="secondWrapper">
+            <div id="container"></div>
+            <button ng-mousedown="show = !show">DNI?</button>
+            <span ng-show="show" id="dniInformation">Direct Normal Irradiance (DNI) is the amount of solar radiation received per unit area by a surface that is always held perpendicular (or normal) to the rays that come in a straight line from the direction of the sun at its current position in the sky.</span>
+            <button></button>
+            <button></button>
           </div>
         
           <div class="dataWrapper" ng-show="thirdWrapper">
@@ -71,7 +77,7 @@
       <h1>{{error_message}}</h1>
       <!-- <h1>{{date | date:'yyyy-MM-dd'}}</h1>       -->
       <!-- <h1>{{filterdatetime}}</h1> -->
-      {{data}}
+      
       <!-- <h2>sSOLAR DATA:</h2>
       {{solar}}
       {{solar.}} -->
