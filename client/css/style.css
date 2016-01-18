@@ -68,18 +68,21 @@
 #container{
   width: 400px;
   margin: : 0 auto;
-  height: 380px;
+  height: 355px;
 }
 
-#dniInformation{
+.solarInfo{
   display: inline-block;
   font-size: 12px;
   overflow: scroll;
-  height: 150px;
-  width: 150px;
+  height: 250px;
+  width: 40%;
   background: white;
   color: black;
   font-weight: bold;
   border: 1px black solid;
   padding: 2px;
+}
+.solarBtn{
+  float:left;
 }

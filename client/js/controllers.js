@@ -5,7 +5,7 @@
 
 // });
 app.controller('MainController', function($scope, $http, $filter) {
-  $(function () {
+  populateChart = function (){
     $('#container').highcharts({
         title: {
             text: 'Monthly Average Temperature',
@@ -21,7 +21,7 @@ app.controller('MainController', function($scope, $http, $filter) {
         },
         yAxis: {
             title: {
-                text: 'Temperature (°C)'
+                text: 'kWh/m2/day'
             },
             plotLines: [{
                 value: 0,
@@ -40,19 +40,16 @@ app.controller('MainController', function($scope, $http, $filter) {
         },
         series: [{
             name: 'DniArr',
-            data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+            data: $scope.DniArr
         }, {
             name: 'New York',
-            data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]
+            data: $scope.ghiValues
         }, {
             name: 'Berlin',
-            data: [-0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0]
-        }, {
-            name: 'London',
-            data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
+            data: $scope.latTilt
         }]
     });
-});
+};
 
   // BTN DIV TOGGLE, 
   $scope.firstWrapper = false;
@@ -122,23 +119,23 @@ airQualityIndexGauage = function(val){
   solarEnergy = function(){
     var url = "https://developer.nrel.gov/api/solar/solar_resource/v1.json?api_key=aaeAF66WRB6IQou8P3WqLT7XQjXROd27QuUS4FFG&lat="+ $scope.lat +"&lon="+ $scope.lng;
     $http.get(url).then(function(solar){
-      var objDni = solar.data.outputs.avg_dni.monthly,
-       DniArr = _(objDni).toArray(),
-      objGhi = solar.data.outputs.avg_ghi.monthly,
-       GhiArr = _(objGhi).toArray(),
-      objLatTilt = solar.data.outputs.avg_lat_tilt.monthly,
-       LatTiltArr = _(objLatTilt).toArray();
+      objDni = solar.data.outputs.avg_dni.monthly;
+        $scope.DniArr = _(objDni).toArray();
+      objGhi = solar.data.outputs.avg_ghi.monthly;
+       $scope.GhiArr = _(objGhi).toArray();
+      objLatTilt = solar.data.outputs.avg_lat_tilt.monthly;
+       $scope.LatTiltArr = _(objLatTilt).toArray();
     // do the same for other two arrays
-      DniArr.forEach(function(ele,i,arr){
-        console.log(ele);
-      });
+      // return $scope.DniArr.forEach(function(ele,i,arr){
+      //   console.log(ele);
+      // });
           
     });
   };
 
 
   weather = function(){
-    var url = "http://api.openweathermap.org/data/2.5/weather?lat="+ $scope.lat+"&lon="+ $scope.lng+"&appid=2de143494c0b295cca9337e1e96b00e0"     
+    var url = "http://api.openweathermap.org/data/2.5/weather?lat="+ $scope.lat+"&lon="+ $scope.lng+"&appid=2de143494c0b295cca9337e1e96b00e0";
     $http.get(url).then(function(weather){
       // console.log(weather);
       // CLOUD NUMBER...WHAT DOES THIS MEAN???
@@ -225,6 +222,7 @@ airQualityIndexGauage = function(val){
       $scope.lng = place.geometry.location.lng();
       breezeData();
       solarEnergy();
+      populateChart();
       // weather();
       // airData();
       // CHECK TO SEE IF BREEZEOMETER DATA IS AVAILABLE. IF IT IS NOT AVAILABLE THEN RETURN A FLASH MESSAGE.
