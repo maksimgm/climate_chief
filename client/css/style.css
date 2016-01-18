@@ -33,10 +33,12 @@
   border-radius: 10px;
   background-color: lightblue;
 }
-
+.parentInfoContainer{
+  position: relative;
+}
 .dataWrapper{
   display: inline-block;
-  width: 66.5%;
+  width: auto;
   height: 400px;
   background-color: #E0E0E0;
   position: absolute;
@@ -86,3 +88,4 @@
 .solarBtn{
   float:left;
 }
+

@@ -46,7 +46,7 @@
           <button class="informationBtn" ng-click="fourthToggle()">filler</button>
 
         </div>
-        <div class="col-xs-12">
+        <div class="parentInfoContainer col-xs-12">
           <div class="dataWrapper" ng-show="firstWrapper">
             <div class="airQualityIndex">
               <p >Air quality: </p>{{data.airQualityIndex}}
@@ -72,21 +72,18 @@
             <div id="container"></div>
             <button></button>
             <button></button>
+            <!-- !!!!FINISH STYLING CHART!!! -->
           </div>
         
           <div class="dataWrapper" ng-show="thirdWrapper">
+            <h3>hello world</h3>
           </div>
-          <div class="dataWrapper" ng-show="fourthWrapper">
+          <!-- <div class="dataWrapper" ng-show="fourthWrapper">
             <h4>THIS IS FILLER TEXT</h4>
-          </div>
+          </div> -->
         </div>
       <h1>{{error_message}}</h1>
-      <!-- <h1>{{date | date:'yyyy-MM-dd'}}</h1>       -->
-      <!-- <h1>{{filterdatetime}}</h1> -->
       
-      <!-- <h2>sSOLAR DATA:</h2>
-      {{solar}}
-      {{solar.}} -->
       </div>
       
     </div>

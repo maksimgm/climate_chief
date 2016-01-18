@@ -137,22 +137,25 @@ airQualityIndexGauage = function(val){
   weather = function(){
     var url = "http://api.openweathermap.org/data/2.5/weather?lat="+ $scope.lat+"&lon="+ $scope.lng+"&appid=2de143494c0b295cca9337e1e96b00e0";
     $http.get(url).then(function(weather){
-      // console.log(weather);
+      
       // CLOUD NUMBER...WHAT DOES THIS MEAN???
       // console.log(weather.data.clouds);
-      // main information
-       console.log("wind degree: "+weather.data.wind.deg);
-       console.log("Winde Speed: "+weather.data.wind.speed);
+      // // main information
+      //  console.log("wind degree: "+weather.data.wind.deg);
+      //  console.log("Winde Speed: "+weather.data.wind.speed);
 
       // console.log("Temp: "+weather.data.main.temp);
       // console.log("Temp MIN: "+weather.data.main.temp_min);
       // console.log("Temp MAX: "+weather.data.main.temp_max);
       // console.log("Pressure: "+weather.data.main.pressure);
       // console.log("humidity: "+weather.data.main.humidity);
+      // console.log("clouds: "+weather.data.clouds);
 
 
-      // console.log(weather.data.main.rain);
-      // console.log(weather.data.main.weather);
+      console.log("DESCRIPTITON1: "+weather.data.weather[0].description);
+      console.log("DESCRIPTITON2: "+weather.data.weather[1].description);
+      
+      
     });
   };
   
@@ -223,7 +226,7 @@ airQualityIndexGauage = function(val){
       breezeData();
       solarEnergy();
       populateChart();
-      // weather();
+      weather();
       // airData();
       // CHECK TO SEE IF BREEZEOMETER DATA IS AVAILABLE. IF IT IS NOT AVAILABLE THEN RETURN A FLASH MESSAGE.
     });
