@@ -2,7 +2,7 @@
   "name": "capstone",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "capstone/server",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +15,16 @@
   "bugs": {
     "url": "https://github.com/maksimgm/essential_air/issues"
   },
-  "homepage": "https://github.com/maksimgm/essential_air#readme"
+  "homepage": "https://github.com/maksimgm/essential_air#readme",
+  "dependencies": {
+    "bcrypt": "^0.8.5",
+    "body-parser": "^1.14.2",
+    "dotenv": "^1.2.0",
+    "express": "^4.13.3",
+    "jsonwebtoken": "^5.5.4",
+    "moment": "^2.11.1",
+    "mongoose": "^4.3.6",
+    "morgan": "^1.6.1",
+    "request": "^2.67.0"
+  }
 }
