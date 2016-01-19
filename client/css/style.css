@@ -213,8 +213,12 @@ table {
   height: 60px;
   width: 100%;
   border-radius: 5px;
+  /*add scrool bar or auto scroll*/
   overflow: scroll;
   border: 2px solid #428BCA;
   background-color: #FF9955;
   padding: 4px;
+}
+.airTable{
+  height: 
 }

@@ -1,3 +1,9 @@
+// TODOS....
+// BACKEND SET UP AUTH FOR USERS...CHECK OUT NEW BRANCH
+// CHOOSE THEME AND ADD STATIC PAGES...BOOTSWATCH THEME
+// USER EXPERIENCE...CLICK BUTTONS AND STYLING THE DIVS
+// DIVS
+// TOUCH UP ON THE STYLING
 
     // Adds autocomplete to trip form location text field
 //GOOGLE MAPS AUTO COMPLETE API = AIzaSyDRtPelzvMVwlTwyQuhN-goYUByFUVNlIo
@@ -36,6 +42,7 @@ app.controller('MainController', function($scope, $http, $filter) {
             borderWidth: 5
         },
         chart:{
+          // make responsive..
           width: 350,
           height: 300,
           backgroundColor: "#EE7942",
