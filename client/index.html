@@ -31,13 +31,13 @@
           <input id="pac-input" class="controls" type="text"
               placeholder="Enter a location">
               <!-- google map -->
-          <div id="map" class="col-xs-8 "></div>
+          <div id="map" class="col-xs-8"></div>
         </div>
         <div class="col-xs-2 btnWrapper">
         <!-- Nav....Informational buttons -->
           <button class="informationBtn" ng-click="firstToggle()">Air Quality</button>
-          <button class="informationBtn" ng-click="secondToggle()">health recommendations</button>
-          <button class="informationBtn" ng-click="thirdToggle()">dominant pollutiona nd pollution effects</button>
+          <button class="informationBtn" ng-click="secondToggle()">Solar Efficency</button>
+          <button class="informationBtn" ng-click="thirdToggle()">Climate</button>
         </div>
         <div class="col-xs-12">
         <!-- Air Quality Info -->
@@ -62,10 +62,13 @@
             <button ng-mousedown="ghi = !ghi" class="solarBtn">GHI?</button>
             <!-- make sure GHI -->
             <span ng-show="ghi" class="solarInfo pull-right">Global Horizontal Irradiance is the total amount of shortwave radiation receieved from above by a surface horizontal ot the ground. This value is of particular interest to photovoltaic instalations and includes Direct Normal Irradiance (DNI) and Diffuse Horizontal Irradiance (DIF).This data provides monthly average and annual average daily total solar resource averaged over surface cells of 0.1 degrees in both latitude and longitude, or about 10 km in size. The values returned are kWh/m2/day (kilowatt hours per square meter per day).</span>
-            <button ng-mousedown="latTilt = !latTilt" class="solarBtn ">DNI?</button>
+            <button ng-mousedown="latTilt = !latTilt" class="solarBtn ">Lat Tilt?</button>
             <!-- make sure LAT TILT -->
-            <span ng-show="latTilt" class="solarInfo pull-right">This data provides monthly average and annual average daily total solar resource averaged over surface cells of 0.1 degrees in both latitude and longitude, or about 10 km in size. The values returned are kWh/m2/day (kilowatt hours per square meter per day).</span>
+            <span ng-show="latTilt" class="solarInfo pull-right">This data provides monthly average and annual average daily total solar resource averaged over surface cells of 0.1 degrees in both latitude and longitude, or about 10 km in size. The values returned are kWh/m2
+            /day (kilowatt hours per square meter per day).</span>
+            
             <div id="container"></div>
+            
             <!-- !!!!FINISH STYLING CHART!!! -->
           </div>
         
@@ -78,9 +81,9 @@
               <div class="row">Min Temp</div>
               <div class="row">Max Temp</div>
             </div>
-            <div class="weatherShit col-xs-6  ">
+            <div class="weatherShit col-xs-6">
               <div class="row">Clouds</div>
-              <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>             is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>
+              
               <!-- weather column 2 -->
               <div class="row">Pressure</div>
               <div class="row">Humidity</div>

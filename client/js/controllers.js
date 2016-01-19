@@ -8,7 +8,7 @@ app.controller('MainController', function($scope, $http, $filter) {
   populateChart = function (){
     $('#container').highcharts({
         title: {
-            text: 'Monthly Average Temperature',
+            text: 'Annual Solar Data',
             x: -20 //center
         },
         subtitle: {
@@ -26,27 +26,34 @@ app.controller('MainController', function($scope, $http, $filter) {
             plotLines: [{
                 value: 0,
                 width: 1,
-                color: '#808080'
+                color: '#FF9955'
             }]
-        },
-        tooltip: {
-            valueSuffix: '°C'
         },
         legend: {
             layout: 'vertical',
             align: 'right',
             verticalAlign: 'middle',
-            borderWidth: 0
+            borderWidth: 5
+        },
+        chart:{
+          width: 350,
+          height: 300,
+          backgroundColor: "#EE7942",
+          borderRadius: 5,
+          border: 2,
+          borderSize: 4,
+          marginLeft: 10,
+          marginRight: 10
         },
         series: [{
-            name: 'DniArr',
-            data: $scope.DniArr
+            name: 'DNI',
+            data: dniArr
         }, {
-            name: 'New York',
-            data: $scope.ghiValues
+            name: 'GHI',
+            data: ghiArr
         }, {
-            name: 'Berlin',
-            data: $scope.latTilt
+            name: 'LT',
+            data: latTiltArr
         }]
     });
 };
@@ -95,7 +102,7 @@ airQualityIndexGauage = function(val){
     angle: 0.5,
     lineWidth: 0.1,
     limitMax: 'false', 
-    percentColors: [[0.0, "#cccccc" ], [0.50, "#ffff00"], [1.0, "#ff0000"]], // !!!!
+    percentColors: [[0, "#cccccc" ], [50, "#00ff00"], [100, "#00ff00"]], // !!!!
     strokeColor: '#E0E0E0',
     generateGradient: true,
       pointer: {
@@ -103,11 +110,14 @@ airQualityIndexGauage = function(val){
       strokeWidth: 0.035 // The rotation offset
       // color: '#000000' // Fill color
     },
-    colorStart: '#cdcdcd',   // Colors
-    colorStop: '#ff0000',    // just experiment with them
     strokeColor: '#000000',   // to see which ones work best for you
     generateGradient: true
     };
+  if (val < 50) {
+    opts.colorStart = 'red';
+  } else {
+    opts.colorStart = 'blue';
+  }
     var target = document.getElementById('foo'); // your canvas element
     var gauge = new Donut(target).setOptions(opts); // create sexy gauge!
     gauge.maxValue = 100; // set max gauge value
@@ -120,16 +130,16 @@ airQualityIndexGauage = function(val){
     var url = "https://developer.nrel.gov/api/solar/solar_resource/v1.json?api_key=aaeAF66WRB6IQou8P3WqLT7XQjXROd27QuUS4FFG&lat="+ $scope.lat +"&lon="+ $scope.lng;
     $http.get(url).then(function(solar){
       objDni = solar.data.outputs.avg_dni.monthly;
-        $scope.DniArr = _(objDni).toArray();
+        dniArr = _(objDni).toArray();
       objGhi = solar.data.outputs.avg_ghi.monthly;
-       $scope.GhiArr = _(objGhi).toArray();
+        ghiArr = _(objGhi).toArray();
       objLatTilt = solar.data.outputs.avg_lat_tilt.monthly;
-       $scope.LatTiltArr = _(objLatTilt).toArray();
-    // do the same for other two arrays
+        latTiltArr = _(objLatTilt).toArray();
+      // do the same for other two arrays
       // return $scope.DniArr.forEach(function(ele,i,arr){
       //   console.log(ele);
       // });
-          console.log($scope.DniArr);
+      populateChart();
     });
   };
 
@@ -223,7 +233,6 @@ airQualityIndexGauage = function(val){
       $scope.lng = place.geometry.location.lng();
       breezeData();
       solarEnergy();
-      populateChart();
       weather();
       // airData();
       // CHECK TO SEE IF BREEZEOMETER DATA IS AVAILABLE. IF IT IS NOT AVAILABLE THEN RETURN A FLASH MESSAGE.

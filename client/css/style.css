@@ -2,7 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-
+/*CSS RESET.... DO NOT ALTER!*/
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -46,7 +46,7 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-
+/*CUSTOM CSS*/
 #map{
   height: 400px;
   /*width: 90%;*/
@@ -55,7 +55,7 @@ table {
 }
 .homeWrapper{
   display: inline-block;
-  background-color: gold;
+  background-color: #FF9955;
   padding: 5px;
   border: solid black 1px;
   width: 90%;
@@ -67,9 +67,27 @@ table {
 /*#map{
   padding: 10px;
 }*/
-.infoBtn{
+/*.infoBtn{
   margin: 20px 0px;
   border-radius: 20px;
+}*/
+.informationBtn{
+  background: #428BCA;
+  color: #fff;
+  font-family: Sans-serif;
+  font-size: 20px;
+  height: 60px;
+  width: 150px;
+  line-height: 60px;
+  margin: 25px 25px;
+  text-align: center;
+  border: 2px;
+  border-radius: red solid;
+  transition: all 0.3s ease 0s;
+}
+/*refactor using ng- animations*/
+.informationBtn:hover {
+  background: #CF4647;
 }
 #pac-input {
   background-color: #fff;
@@ -80,14 +98,15 @@ table {
   padding: 0 11px 0 13px;
   text-overflow: ellipsis;
   width: 300px;
+  padding: 5px;
   margin: 10px 0;
 }
-.informationBtn{
+/*.informationBtn{
   display: block;
   margin: 10px 0px;
   border-radius: 10px;
   background-color: lightblue;
-}
+}*/
 .parentInfoContainer{
   /*position: relative;*/
 }
@@ -95,9 +114,9 @@ table {
   display: inline-block;
   width: 66.5%;
   height: 400px;
-  background-color: #E0E0E0;
+  background-color: #428BCA;
   position: absolute;
-  left: 8.33333333%;
+  left: 0.2%;
   bottom: 0vh;
   /*opacity: .9;*/
   padding: 10px;
@@ -123,9 +142,11 @@ table {
 
 }*/
 #container{
-  width: 400px;
-  margin: : 0 auto;
-  height: 355px;
+  /*/*width: 100%;
+  margin: : 0 auto;*/
+  /*height: 80%;
+  border-radius: 5px;*/
+  /*width: 80% !important*/;
 }
 
 .solarInfo{
@@ -134,22 +155,35 @@ table {
   overflow: scroll;
   height: 250px;
   width: 40%;
-  background: white;
+  background: #428BCA;
   color: black;
   font-weight: bold;
   border: 1px black solid;
   padding: 2px;
 }
 .solarBtn{
+  background: #428BCA;
+  color: #fff;
+  font-family: Sans-serif;
+  font-size: 14px;
+  height: 40px;
+  width: 70px;
+  line-height: 30px;
+  margin: 10px 10px;
+  text-align: center;
+  border: 1px solid yellow;
+  border-radius: 5px;
+  transition: all 0.3s ease 0s;
   float:left;
 }
+/*refactor using ng- animations*/
+.solarBtn:hover {
+  box-shadow: inset 0 0 0 5px #3071A9;
+}
+
 
 .weatherShit{
   background-color: teal;
   height: 350px;
   padding: 20px 10px;
-}
-
-#foo{
-  background-color: green;
 }
