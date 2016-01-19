@@ -23,7 +23,6 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-  
     <div ng-controller='MainController' class="homeWrapper container-fluid">
       <div class="row">
         <div>
@@ -38,7 +37,9 @@
           <button class="informationBtn" ng-click="firstToggle()">Air Quality</button>
           <button class="informationBtn" ng-click="secondToggle()">Solar Efficency</button>
           <button class="informationBtn" ng-click="thirdToggle()">Climate</button>
+          
         </div>
+
         <div class="col-xs-12">
         <!-- Air Quality Info -->
           <div class="dataWrapper" ng-show="firstWrapper">
@@ -99,7 +100,7 @@
       <h1>{{error_message}}</h1>
       
       </div>
-      
+         
     </div>
 
   </body>
