@@ -50,7 +50,7 @@ table {
 #map{
   height: 400px;
   /*width: 90%;*/
-  border: 2px solid red;
+  border: 2px solid #428BCA;
   border-radius: 5px;
 }
 .homeWrapper{
@@ -101,6 +101,29 @@ table {
   padding: 5px;
   margin: 10px 0;
 }
+#foo{
+  padding-top: 10px;
+  padding-bottom:10px;
+}
+.aqiDesContainer{
+  display: inline-block;
+  margin-top: 20px;
+  line-height: 20px;
+}
+.aqiHeader{
+  display: inline-block;
+  float: left;
+  font-weight: bold; 
+}
+.ariDesc{
+  float: left;
+  font-size: 22px;
+  text-align: middle;
+}
+.aqiDetails{
+  font-size: 14px;
+  display: inline;
+}
 /*.informationBtn{
   display: block;
   margin: 10px 0px;
@@ -128,13 +151,13 @@ table {
   width: 40%;
 }
 .airDomPollutant{
-  display: inline-block;
+  /*display: inline-block;
   padding-top: 25px;
   padding-bottom: 25px;
   height: 350px;
   width: 55%; 
   float: right;
-  background-color: green;
+  background-color: green;*/
 }
 /*wraps directional buttons to the right of the map*/
 /*

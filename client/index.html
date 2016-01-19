@@ -42,15 +42,16 @@
         <div class="col-xs-12">
         <!-- Air Quality Info -->
           <div class="dataWrapper" ng-show="firstWrapper">
-            <div class="airQualityIndex">
-              <p >Air quality: </p>{{data.airQualityIndex}}
-              <p>Air Description: </p>{{data.airQualityDesc}}
-                <canvas id="foo"></canvas>
-            </div>
-            <div class="airDomPollutant">
-              <h3>DOMINANT POLLUTANTS</h3>{{data.dominantPollutant}}
-              <h3>HEALTH RECCOMMENDAIONS</h3>{{data.healthRecommendations}}
-              <h3>POLLUTION EFFECTS</h3>{{data.pollutionEffects}}
+              <h2 class="ariDesc">You have {{data.airQualityDesc}}. {{data.airQualityIndex}} out of 100</h2>
+                <canvas id="foo"></canvas><br>
+            <!-- </div> -->
+            <div class="aqiDesContainer">
+              <h2 class="aqiHeader">Health Pollutants: </h2>
+                <span class="aqiDetails">{{data.healthRecommendations}}</span><br>
+              <h2 class="aqiHeader">Domminant Pollutants: </h2>
+                <span class="aqiDetails">{{data.dominantPollutant}}</span><br>
+              <h2 class="aqiHeader">Pollution Effects: </h2>
+                <span class="aqiDetails">{{data.pollutionEffects}}</span>
             </div>
             
           </div>

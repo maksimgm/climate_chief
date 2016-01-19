@@ -102,7 +102,7 @@ airQualityIndexGauage = function(val){
     angle: 0.5,
     lineWidth: 0.1,
     limitMax: 'false', 
-    percentColors: [[0, "#cccccc" ], [50, "#00ff00"], [100, "#00ff00"]], // !!!!
+    // percentColors: [[0, "#cccccc" ], [50, "#00ff00"], [100, "#00ff00"]], // !!!!
     strokeColor: '#E0E0E0',
     generateGradient: true,
       pointer: {
@@ -110,14 +110,15 @@ airQualityIndexGauage = function(val){
       strokeWidth: 0.035 // The rotation offset
       // color: '#000000' // Fill color
     },
-    strokeColor: '#000000',   // to see which ones work best for you
-    generateGradient: true
+    // strokeColor: '#000000',   // to see which ones work best for you
     };
-  if (val < 50) {
-    opts.colorStart = 'red';
-  } else {
-    opts.colorStart = 'blue';
-  }
+    if (val < 33) {
+      opts.colorStart = 'red';
+    } else if(val < 67 && val > 33){
+      opts.colorStart = 'orange';
+    }else{
+      opts.colorStart = 'green';
+    }
     var target = document.getElementById('foo'); // your canvas element
     var gauge = new Donut(target).setOptions(opts); // create sexy gauge!
     gauge.maxValue = 100; // set max gauge value
