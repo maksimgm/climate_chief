@@ -46,18 +46,34 @@
         <div class="col-xs-12">
         <!-- Air Quality Info -->
           <div class="dataWrapper" ng-show="firstWrapper">
+            
               <h2 class="ariDesc">You have {{data.airQualityDesc}}. {{data.airQualityIndex}} out of 100</h2>
                 <canvas id="foo"></canvas><br>
-            <!-- </div> -->
-            <div class="aqiDesContainer">
+            
+            
+
+            <!-- <div class="aqiDesContainer">
               <h2 class="aqiHeader">Health Pollutants: </h2>
                 <span class="aqiDetails">{{data.healthRecommendations}}</span><br>
               <h2 class="aqiHeader">Domminant Pollutants: </h2>
                 <span class="aqiDetails">{{data.dominantPollutant}}</span><br>
               <h2 class="aqiHeader">Pollution Effects: </h2>
                 <span class="aqiDetails">{{data.pollutionEffects}}</span>
-            </div>
-            
+            </div> -->
+            <table class="airTable">
+              <thead>
+                <th>Health Pollutants</th>
+                <th>Domminant Pollutants</th>
+                <th>Pollution Effects</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{{data.healthRecommendations}}</td>
+                  <td>{{data.dominantPollutant}}</td>
+                  <td>{{data.pollutionEffects}}</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
           <!-- aside buttons...toogle between information -->
           <div class="dataWrapper " ng-show="secondWrapper">
