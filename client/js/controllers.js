@@ -42,8 +42,8 @@ app.controller('MainController', function($scope, $http, $filter) {
           borderRadius: 5,
           border: 2,
           borderSize: 4,
-          marginLeft: 10,
-          marginRight: 10
+          // margin: 0  ,
+          paddingLeft: 10
         },
         series: [{
             name: 'DNI',

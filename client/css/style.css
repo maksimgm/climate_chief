@@ -174,18 +174,14 @@ table {
 
 .solarInfo{
   display: inline-block;
+  padding: 5px;
   font-size: 12px;
-  overflow: scroll;
-  height: 250px;
-  width: 40%;
-  background: #428BCA;
-  color: black;
-  font-weight: bold;
-  border: 1px black solid;
-  padding: 2px;
+  letter-spacing: 1.1px;
+  line-height: 1.2;
 }
 .solarBtn{
   background: #428BCA;
+  display: inline-block;
   color: #fff;
   font-family: Sans-serif;
   font-size: 14px;
@@ -194,14 +190,16 @@ table {
   line-height: 30px;
   margin: 10px 10px;
   text-align: center;
-  border: 1px solid yellow;
+  border: 1px solid #FF9955;
   border-radius: 5px;
   transition: all 0.3s ease 0s;
-  float:left;
+  float: right;
+  clear: both;
+  /*margin: 10px 5px 10px 5px;*/
 }
 /*refactor using ng- animations*/
 .solarBtn:hover {
-  box-shadow: inset 0 0 0 5px #3071A9;
+  box-shadow: inset 0 0 0 5px #CF4647;
 }
 
 
@@ -209,4 +207,14 @@ table {
   background-color: teal;
   height: 350px;
   padding: 20px 10px;
+}
+.thisPlaceHodler{
+  margin-top: 10px;
+  height: 60px;
+  width: 100%;
+  border-radius: 5px;
+  overflow: scroll;
+  border: 2px solid #428BCA;
+  background-color: #FF9955;
+  padding: 4px;
 }
