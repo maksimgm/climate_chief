@@ -37,6 +37,8 @@ app.config(function($routeProvider, $locationProvider, $authProvider){
     url: '/api/auth/facebook'
   });
 
+  $authProvider.httpInterceptor = false;
+
   function skipIfLoggedIn($q, $auth, $location) {
       var deferred = $q.defer();
       if ($auth.isAuthenticated()) {

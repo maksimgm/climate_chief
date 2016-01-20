@@ -158,6 +158,17 @@ airQualityIndexGauage = function(val){
       
       // CLOUD NUMBER...WHAT DOES THIS MEAN???
     // LEFT CLUSTER
+    $scope.weather = {
+      desc: data.weather[0].description +' and '+ weather.data.weather[1].description,
+      temp: data.main.temp,
+      minTemp: data.main.temp_min,
+      maxTemp: data.main.temp_max,
+      clouds: data.clouds,
+      pressure: data.main.pressure,
+      humidity: data.main.humidity,
+      windDegree: data.main.wind.degree,
+      windSpeed: data.main.wind.speed
+    };
       // console.log("DESCRIPTITON1: "+weather.data.weather[0].description);
       // console.log("DESCRIPTITON2: "+weather.data.weather[1].description);
       // console.log("Temp: "+weather.data.main.temp);
@@ -301,7 +312,7 @@ app.controller('SignupController', function($scope, $location, $auth) {
   //       console.log(error);
   //     }
   // });
-  };
+  // };
   $scope.signup = function() {
     $auth.signup($scope.user)
       .then(function(response) {

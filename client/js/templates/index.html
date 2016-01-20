@@ -31,14 +31,14 @@
             
             
 
-            <!-- <div class="aqiDesContainer">
+            <div class="aqiDesContainer">
               <h2 class="aqiHeader">Health Pollutants: </h2>
                 <span class="aqiDetails">{{data.healthRecommendations}}</span><br>
               <h2 class="aqiHeader">Domminant Pollutants: </h2>
                 <span class="aqiDetails">{{data.dominantPollutant}}</span><br>
               <h2 class="aqiHeader">Pollution Effects: </h2>
                 <span class="aqiDetails">{{data.pollutionEffects}}</span>
-            </div> -->
+            </div>
             <table class="airTable">
               <thead>
                 <th>Health Pollutants</th>
@@ -74,6 +74,8 @@
           </div>
         
           <div class="dataWrapper" ng-show="thirdWrapper">
+          {{weather}}
+          {{weather.desc}}
             <h3>weather information</h3>
             <div class="weatherShit col-xs-6 ">
               <!-- weather column 1 -->
