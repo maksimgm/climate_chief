@@ -153,22 +153,16 @@ airQualityIndexGauage = function(val){
 
 
   weather = function(){
-    var url = "http://api.openweathermap.org/data/2.5/weather?lat="+ $scope.lat+"&lon="+ $scope.lng+"&appid=2de143494c0b295cca9337e1e96b00e0";
+    var url = "http://api.openweathermap.org/data/2.5/weather?lat="+ $scope.lat+"&lon="+ $scope.lng+"&appid=2de143494c0b295cca9337e1e96b00e0&units=imperial";
     $http.get(url).then(function(weather){
       
       // CLOUD NUMBER...WHAT DOES THIS MEAN???
     // LEFT CLUSTER
-    $scope.weather = {
-      desc: data.weather[0].description +' and '+ weather.data.weather[1].description,
-      temp: data.main.temp,
-      minTemp: data.main.temp_min,
-      maxTemp: data.main.temp_max,
-      clouds: data.clouds,
-      pressure: data.main.pressure,
-      humidity: data.main.humidity,
-      windDegree: data.main.wind.degree,
-      windSpeed: data.main.wind.speed
-    };
+
+  $scope.weather = {
+    temp: weather.data.main.temp
+  };
+  console.log($scope.weather.temp);
       // console.log("DESCRIPTITON1: "+weather.data.weather[0].description);
       // console.log("DESCRIPTITON2: "+weather.data.weather[1].description);
       // console.log("Temp: "+weather.data.main.temp);
@@ -196,8 +190,8 @@ airQualityIndexGauage = function(val){
     $http.get(url).then(function(data){
       if(data.data.data_valid === false){
         // $scope.error_message = data.data.error.message;
-        // alert(data.data.error.message);
-        // return;
+        alert(data.data.error.message);
+        return;
       }
       $scope.data = {
         airQualityDesc: data.data.breezometer_description,
