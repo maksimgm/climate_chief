@@ -1,10 +1,21 @@
-<h1>Signup</h1>
-<div class="well">
-  <form action="javascript:void(0)" ng-click="authenticate('facebook')">
-    <label for="username">Username</label>
-    <input type="text">
-    <label for="pw">Password</label>
-    <input type="text">
-    <input type="submit">
+<div class="well col-xs-6 col-xs-offset-3">
+  <h1 class="text-center">Signup</h1>
+  <form method="post" ng-submit="authenticate(' ')" name="loginForm">
+    <div class="form-group has-feedback">
+      <input class="form-control input-lg" type="text" name="email" ng-model="user.email" placeholder="Email" required autofocus>
+      <span class="ion-at form-control-feedback"></span>
+    </div>
+    <div class="form-group has-feedback">
+      <input class="form-control input-lg" type="password" name="password" ng-model="user.password" placeholder="Password" required>
+      <span class="ion-key form-control-feedback"></span>
+    </div>
+    <button type="submit" ng-disabled="loginForm.$invalid" class="btn btn-lg  btn-block btn-success">Log in</button>
+    <br/>
+    <p class="text-center text-muted">
+      <small>Already have an account yet? <a href="/login">Login</a></small>
+    </p>
+    <button class="btn btn-block btn-facebook" ng-click="authenticate('facebook')">Sign in with Facebook</button>
+      <hr>
+    </div>
   </form>
-<button ng-click="authenticate('facebook')">Sign up with Facebook</button>
+</div>
