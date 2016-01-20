@@ -67,30 +67,24 @@
             
             <div class="weatherWrapper col-xs-6 solarInfo text-center">
               <!-- weather column 1 -->
-              <i style="font-size: 50px;" ng-if="weather.temp > 65" class="wi wi-day-sunny"></i>
-              <i style="font-size: 50px;" ng-if="weather.temp < 64" class="wi wi-day-cloudy-windy"></i>
+              <i ng-if="weather.temp > 65" class="wi wi-day-sunny climateInfo"></i>
+              <i ng-if="weather.temp < 64" class="wi wi-day-cloudy-windy climateInfo"></i>
               <br>
-              <p>Temperature{{weather.temp}} F</p>
+              <p>Temperature {{weather.temp}} F</p>
               <p>Lows {{weather.temp_min}} F</p>
               <p>Highs {{weather.temp_max}} F</p>
               <p>{{weather.desc}}</p>
-              
             </div>
-            clouds
-pres
-hum
-wind_speed
-wind_degree
             <div class="weatherShit col-xs-6 solarInfo">
-              <i class="wi wi-day-cloudy"></i>
+              <i class="wi wi-day-cloudy climateInfo"></i>
               <p>Cloud Cover {{weather.clouds}}</p>
               <p>Pressure(Pa){{weather.pres}}</p>
-              <i class="wi wi-humidity"></i>
+              <i class="wi wi-humidity climateInfo"></i>
               <p>Humidity {{weather.hum}}</p>
-              <i class="wi wi-strong-windy"></i>
+              <i class="wi wi-strong-wind climateInfo"></i>
               <p>Wind Speed {{weather.wind_speed}}</p>
-              <i class="wi wi-strong-direction"></i>
-              <p>Wind Degree{{weather.wind_degree}}</p>
+              <i class="wi wi-direction-up climateInfo"></i>
+              <p>Wind Degree {{weather.wind_degree}}</p>
               <!-- weather column 2 -->
               
             </div>

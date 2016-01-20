@@ -131,7 +131,7 @@ table {
 }
 .dataWrapper{
   display: inline-block;
-  width: 62.6%;
+  width: 62.7%;
   height: 400px;
   background-color: #428BCA;
   position: absolute;
@@ -226,33 +226,42 @@ table {
 
  /*==========  Non-Mobile First Method  ==========*/
     /* Medium Devices, Desktops */
-    @media only screen and (max-width : 992px) {
-      .jumbotron{
-        width: 100%;
-        height: 560px;
-      }
-    }
+@media only screen and (max-width : 992px) {
+  .jumbotron{
+    width: 100%;
+    height: 560px;
+  }
+}
 
-    /* Small Devices, Tablets */
-    @media only screen and (max-width : 768px) {
-      .jumbotron{
-        width: 100%;
-        height: 560px;
-      }
-    }
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+  .jumbotron{
+    width: 100%;
+    height: 560px;
+  }
+}
 
-    /* Extra Small Devices, Phones */ 
-    @media only screen and (max-width : 480px) {
-      .jumbotron{
-        width: 100%;
-        height: 560px;
-      }
-    }
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 480px) {
+  .jumbotron{
+    width: 100%;
+    height: 560px;
+  }
+}
 
-    /* Custom, iPhone Retina */ 
-    @media only screen and (max-width : 320px) {
-      .jumbotron{
-        width: 100%;
-        height: 560px;
-      }   
-    }
+/* Custom, iPhone Retina */ 
+@media only screen and (max-width : 320px) {
+  .jumbotron{
+    width: 100%;
+    height: 560px;
+  }   
+}
+.climateInfo{
+  font-size: 40px;
+}
+.weatherWrapper.solarInfo{
+  display: flex;
+    justify-content:center;
+    align-content:center;
+    flex-direction:column;
+}
