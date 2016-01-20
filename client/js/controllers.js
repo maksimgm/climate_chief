@@ -110,14 +110,12 @@ airQualityIndexGauage = function(val){
     lineWidth: 0.1,
     limitMax: 'false', 
     // percentColors: [[0, "#cccccc" ], [50, "#00ff00"], [100, "#00ff00"]], // !!!!
-    strokeColor: '#E0E0E0',
-    generateGradient: true,
+    strokeColor: 'white',
+    generateGradient: false,
       pointer: {
       length: 0.9, // The radius of the inner circle
-      strokeWidth: 0.035 // The rotation offset
-      // color: '#000000' // Fill color
+      strokeWidth: 0.035, // The rotation offset
     },
-    // strokeColor: '#000000',   // to see which ones work best for you
     };
     if (val < 33) {
       opts.colorStart = 'red';
@@ -160,9 +158,17 @@ airQualityIndexGauage = function(val){
     // LEFT CLUSTER
 
   $scope.weather = {
-    temp: weather.data.main.temp
+    temp: weather.data.main.temp,
+    temp_min: weather.data.main.temp_min,
+    temp_max: weather.data.main.temp_max,
+    desc: weather.data.weather[0].description +" and "+ weather.data.weather[1].description,
+    clouds: weather.data.clouds.all,
+    pres: weather.data.main.pressure,
+    hum: weather.data.main.humidity,
+    wind_speed: weather.data.wind.speed,
+    wind_degree: weather.data.wind.deg
   };
-  console.log($scope.weather.temp);
+  console.log($scope.weather);
       // console.log("DESCRIPTITON1: "+weather.data.weather[0].description);
       // console.log("DESCRIPTITON2: "+weather.data.weather[1].description);
       // console.log("Temp: "+weather.data.main.temp);

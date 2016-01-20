@@ -19,31 +19,30 @@
       <div class="col-xs-12">
         <!-- Air Quality Info -->
           <div class="dataWrapper" ng-show="firstWrapper">
-            
-              <h2 class="ariDesc">You have {{data.airQualityDesc}}. {{data.airQualityIndex}} out of 100</h2>
-                <canvas id="foo"></canvas><br>
-            <div class="aqiDesContainer">
-              <h2 class="aqiHeader">Health Pollutants: </h2>
-                <span class="aqiDetails">{{data.healthRecommendations}}</span><br>
-              <h2 class="aqiHeader">Domminant Pollutants: </h2>
-                <span class="aqiDetails">{{data.dominantPollutant}}</span><br>
-              <h2 class="aqiHeader">Pollution Effects: </h2>
-                <span class="aqiDetails">{{data.pollutionEffects}}</span>
+              <p class="ariDesc pull-right">You have {{data.airQualityDesc}}.</p>
+              <p class="ariDesc pull-left">{{data.airQualityIndex}} out of 100</p>
+              
+              <canvas id="foo"></canvas>
+
+            <div class="col-xs-4">
+              <p>Health Pollutants</p>
+              <div class="solarInfo">
+                {{data.healthRecommendations}}
+              </div>
             </div>
-            <table class="airTable">
-              <thead>
-                <th>Health Pollutants</th>
-                <th>Domminant Pollutants</th>
-                <th>Pollution Effects</th>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>{{data.healthRecommendations}}</td>
-                  <td>{{data.dominantPollutant}}</td>
-                  <td>{{data.pollutionEffects}}</td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="col-xs-4">
+              <p>Domminant Pollutants</p>
+              <div class="solarInfo">{{data.dominantPollutant}}</div>
+            </div>
+            <div class="col-xs-4">
+              <p>Pollution Effects</p>
+              <div class="solarInfo">{{data.pollutionEffects}}</div>
+            </div>
+            
+
+
+           
+
           </div>
           <!-- aside buttons...toogle between information -->
           <div class="dataWrapper " ng-show="secondWrapper">
@@ -65,30 +64,38 @@
           </div>
         
           <div class="dataWrapper" ng-show="thirdWrapper">
-          {{weather}}
-          
-            <h3>weather information</h3>
-            <div class="weatherShit col-xs-6 ">
+            
+            <div class="weatherWrapper col-xs-6 solarInfo text-center">
               <!-- weather column 1 -->
-              <div class="row">Temp</div>
-              <div class="row title">{{weather.desc}}</div>
-              <div class="row">Min Temp</div>
-              <div class="row">Max Temp</div>
-            </div>
-            <div class="weatherShit col-xs-6">
-              <div class="row">Clouds</div>
+              <i style="font-size: 50px;" ng-if="weather.temp > 65" class="wi wi-day-sunny"></i>
+              <i style="font-size: 50px;" ng-if="weather.temp < 64" class="wi wi-day-cloudy-windy"></i>
+              <br>
+              <p>Temperature{{weather.temp}} F</p>
+              <p>Lows {{weather.temp_min}} F</p>
+              <p>Highs {{weather.temp_max}} F</p>
+              <p>{{weather.desc}}</p>
               
+            </div>
+            clouds
+pres
+hum
+wind_speed
+wind_degree
+            <div class="weatherShit col-xs-6 solarInfo">
+              <i class="wi wi-day-cloudy"></i>
+              <p>Cloud Cover {{weather.clouds}}</p>
+              <p>Pressure(Pa){{weather.pres}}</p>
+              <i class="wi wi-humidity"></i>
+              <p>Humidity {{weather.hum}}</p>
+              <i class="wi wi-strong-windy"></i>
+              <p>Wind Speed {{weather.wind_speed}}</p>
+              <i class="wi wi-strong-direction"></i>
+              <p>Wind Degree{{weather.wind_degree}}</p>
               <!-- weather column 2 -->
-              <div class="row">Pressure</div>
-              <div class="row">Humidity</div>
-              <div class="row">Wind Speed</div>
-              <div class="row">Wind Degree</div>
+              
             </div>
           </div>
-          <!-- <div class="dataWrapper" ng-show="fourthWrapper">
-            <h4>THIS IS FILLER TEXT</h4>
-          </div> -->
-      <h1>{{error_message}}</h1>
+      <!-- <h1>{{error_message}}</h1> -->
         </div>
      
     </div>
