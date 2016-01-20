@@ -47,6 +47,10 @@ table {
   border-spacing: 0;
 }
 /*CUSTOM CSS*/
+body{
+  background-image: url("https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwiYvrSnrbnKAhVIyj4KHYenDUUQjRwIBw&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3Dx2vONDiEcCw&psig=AFQjCNEY07PRcFGmqFnAPCb3SSOQfh7N9w&ust=1453412410097345");
+}
+
 #map{
   height: 400px;
   /*width: 90%;*/
@@ -218,7 +222,6 @@ table {
   height: 
 }
 .jumbotron{
-  background-image: url("https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwjwpYvZ_LjKAhUCPz4KHcJ-BUYQjRwIBw&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FTree&psig=AFQjCNH0cqsk0HFVT5e2bTxPZkiVdEUAng&ust=1453399364694076");
   background-attachment: fixed;
   background-color: #FF9955;
   margin-top: 20px;
