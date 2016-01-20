@@ -1,36 +1,27 @@
-  
-<h1>Logged in!</h1>
 
-<a href="/logout">Logout</a>
-
-  
-<div ng-controller='MainController' class="homeWrapper container-fluid">
-      <div class="row">
-        <div>
+<div class="container" ng-controller='MainController'>
+  <div class="row">
+    <div class="col-md-12 jumbotron">
+      <h1>Logged in!</h1>
+      <a href="/logout">Logout</a>
+      <div class="col-xs-8">
         <!-- google map search bar -->
           <input id="pac-input" class="controls" type="text"
               placeholder="Enter a location">
               <!-- google map -->
-          <div id="map" class="col-xs-8"></div>
-        </div>
-        <div class="col-xs-2 btnWrapper">
-        <!-- Nav....Informational buttons -->
-          <button class="informationBtn" ng-click="firstToggle()">Air Quality</button>
-          <button class="informationBtn" ng-click="secondToggle()">Solar Efficency</button>
-          <button class="informationBtn" ng-click="thirdToggle()">Climate</button>
-          <i class="wi wi-night-sleet"></i>
-          <i class="wi wi-day-sunny"></i>
-        </div>
-
-        <div class="col-xs-12">
+          <div id="map"></div>
+      </div>
+      <div class="col-xs-2">
+        <button class="informationBtn" ng-click="firstToggle()">Air Quality</button>
+        <button class="informationBtn" ng-click="secondToggle()">Solar Efficency</button>
+        <button class="informationBtn" ng-click="thirdToggle()">Climate</button>
+      </div>
+      <div class="col-xs-12">
         <!-- Air Quality Info -->
           <div class="dataWrapper" ng-show="firstWrapper">
             
               <h2 class="ariDesc">You have {{data.airQualityDesc}}. {{data.airQualityIndex}} out of 100</h2>
                 <canvas id="foo"></canvas><br>
-            
-            
-
             <div class="aqiDesContainer">
               <h2 class="aqiHeader">Health Pollutants: </h2>
                 <span class="aqiDetails">{{data.healthRecommendations}}</span><br>
@@ -97,9 +88,16 @@
           <!-- <div class="dataWrapper" ng-show="fourthWrapper">
             <h4>THIS IS FILLER TEXT</h4>
           </div> -->
-        </div>
       <h1>{{error_message}}</h1>
-      
-      </div>
-         
+        </div>
+     
     </div>
+  </div>
+</div>
+
+  
+
+
+  
+
+        
