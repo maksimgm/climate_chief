@@ -68,23 +68,34 @@ app.controller('MainController', function($scope, $http, $filter) {
   // BTN DIV TOGGLE, 
   $scope.firstWrapper = false;
   $scope.firstToggle = function(){
-    if(($scope.secondWrapper || $scope.thirdWrapper) === false){
-      $scope.firstWrapper = !$scope.firstWrapper;
-    }
+    $scope.firstWrapper = !$scope.firstWrapper;
+    $scope.secondWrapper = false;
+    $scope.thirdWrapper = false;
+    $scope.showMap = false;
   };
 // second wrapper
   $scope.secondWrapper = false;
   $scope.secondToggle = function(){
-    if(($scope.firstWrapper || $scope.thirdWrapper) === false){
-      $scope.secondWrapper = !$scope.secondWrapper;
-    }
+    $scope.secondWrapper = !$scope.secondWrapper;
+    $scope.firstWrapper = false;
+    $scope.thirdWrapper = false;
+    $scope.showMap = false;
   };
 
   $scope.thirdWrapper = false;
   $scope.thirdToggle = function(){
-    if(($scope.firstWrapper || $scope.secondWrapper) === false){
-      $scope.thirdWrapper = !$scope.thirdWrapper;
-    }
+    $scope.thirdWrapper = !$scope.thirdWrapper;
+    $scope.firstWrapper = false;
+    $scope.secondWrapper = false;
+    $scope.showMap = false;
+  };
+
+  $scope.showMap = false;
+  $scope.mapToggle = function(){
+    $scope.showMap = !$scope.showMap;
+    $scope.firstWrapper = false;
+    $scope.secondWrapper = false; 
+    $scope.showMap = false;
   };
 
   // $scope.fourthWrapper = false;

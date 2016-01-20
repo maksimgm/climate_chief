@@ -3,6 +3,9 @@ var app = angular.module("EssentialAir", ['ngRoute', 'satellizer']);
 
 app.config(function($routeProvider, $locationProvider, $authProvider){
   $routeProvider
+  .when('/about',{
+    templateUrl:'templates/about.html'
+  })
   .when('/home', {
     controller: "MainController",
     templateUrl: "templates/index.html",

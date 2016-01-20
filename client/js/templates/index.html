@@ -2,8 +2,6 @@
 <div class="container" ng-controller='MainController'>
   <div class="row">
     <div class="col-md-12 jumbotron">
-      <h1>Logged in!</h1>
-      <a href="/logout">Logout</a>
       <div class="col-xs-8">
         <!-- google map search bar -->
           <input id="pac-input" class="controls" type="text"
@@ -11,7 +9,8 @@
               <!-- google map -->
           <div id="map"></div>
       </div>
-      <div class="col-xs-2">
+      <div class="col-xs-2" ng-hide="data == undefined">
+        <button class="informationBtn" ng-click="mapToggle()">Map</button>
         <button class="informationBtn" ng-click="firstToggle()">Air Quality</button>
         <button class="informationBtn" ng-click="secondToggle()">Solar Efficency</button>
         <button class="informationBtn" ng-click="thirdToggle()">Climate</button>
@@ -38,11 +37,6 @@
               <p>Pollution Effects</p>
               <div class="solarInfo">{{data.pollutionEffects}}</div>
             </div>
-            
-
-
-           
-
           </div>
           <!-- aside buttons...toogle between information -->
           <div class="dataWrapper " ng-show="secondWrapper">
