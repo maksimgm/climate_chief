@@ -182,7 +182,7 @@ airQualityIndexGauage = function(val){
       temp: weather.data.main.temp,
       temp_min: weather.data.main.temp_min,
       temp_max: weather.data.main.temp_max,
-      // desc: weather.data.weather[0].description +" and "+ weather.data.weather[1].description,
+      desc: weather.data.weather[0].description +" and "+ weather.data.weather[1].description,
       clouds: weather.data.clouds.all,
       pres: weather.data.main.pressure,
       hum: weather.data.main.humidity,
