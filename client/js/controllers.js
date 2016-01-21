@@ -12,6 +12,7 @@
 // });
 app.controller('MainController', function($scope, $http, $filter, $auth) {
   $scope.user = $auth.getPayload().user;
+
   populateChart = function (){
     $('#container').highcharts({
         title: {

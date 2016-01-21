@@ -46,10 +46,10 @@ table {
   border-spacing: 0;
 }
 /*CUSTOM CSS*/
-body{
-  background-image: url("https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwiYvrSnrbnKAhVIyj4KHYenDUUQjRwIBw&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3Dx2vONDiEcCw&psig=AFQjCNEY07PRcFGmqFnAPCb3SSOQfh7N9w&ust=1453412410097345");
+h1,h2,h3,h4,h5,h6,p,span{
+  letter-spacing: 1.1px;
+  font-family: Roboto;
 }
-
 #map{
   height: 400px;
   /*width: 90%;*/
@@ -66,15 +66,15 @@ body{
 .informationBtn{
   background: #428BCA;
   color: #fff;
-  font-family: Sans-serif;
+  font-family: Roboto;
   font-size: 20px;
   height: 60px;
   width: 150px;
   line-height: 60px;
-  margin: 25px 25px;
+  margin: 20px 20px;
   text-align: center;
   border: 2px;
-  border-radius: red solid;
+  border-radius: 5px;
   transition: all 0.3s ease 0s;
 }
 /*refactor using ng- animations*/
@@ -95,11 +95,8 @@ body{
   margin: 10px 0;
 }
 #foo{
-  padding-left: 0;
-  padding-right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
+  float: right;
+  padding: 5px 3px;
 }
 .aqiDesContainer{
   display: inline-block;
@@ -119,36 +116,32 @@ body{
 }
 .dataWrapper{
   display: inline-block;
-  width: 62.7%;
+  width: 70.7%;
   height: 400px;
   background-color: #428BCA;
-  /*#f6ae29*/
   position: absolute;
-  left: 2%;
-  bottom: 8.5vh;
-  /*opacity: .9;*/
   padding: 10px;
-
+  border-radius: 5px;
+  bottom: 40px;
 }
 .airQualityIndex{
   display: inline-block;
   height: 150px;
   width: 40%;
 }
-#container{
-  /*/*width: 100%;
-  margin: : 0 auto;*/
-  /*height: 80%;
-  border-radius: 5px;*/
-  /*width: 80% !important*/;
-}
-
 .solarInfo{
   display: inline-block;
   padding: 5px;
   font-size: 12px;
   letter-spacing: 1.1px;
   line-height: 1.2;
+}
+.airDetails{
+  overflow: auto;
+  padding-top: 3px
+}
+.dataWrapper{
+  overflow: auto;
 }
 .solarBtn{
   background: #428BCA;
@@ -190,7 +183,7 @@ body{
   padding: 4px;
 }
 .jumbotron{
-  background-attachment: fixed;
+  position: relative;
   background-color: #f6ae29;
   margin-top: 20px;
 }
@@ -231,10 +224,7 @@ body{
   font-size: 40px;
 }
 .weatherWrapper.solarInfo{
-  display: flex;
-    justify-content:center;
-    align-content:center;
-    flex-direction:column;
+  overflow: scroll;
 }
 .btn-facebook {
   color: #fff;
