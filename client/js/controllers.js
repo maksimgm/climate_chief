@@ -97,7 +97,7 @@ app.controller('MainController', function($scope, $http, $filter, $auth) {
     $scope.showMap = !$scope.showMap;
     $scope.firstWrapper = false;
     $scope.secondWrapper = false; 
-    $scope.showMap = false;
+    $scope.thirdWrapper = false;
   };
 
   // $scope.fourthWrapper = false;
