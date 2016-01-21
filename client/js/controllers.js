@@ -11,6 +11,14 @@
 
 // });
 app.controller('MainController', function($scope, $http, $filter, $auth) {
+  
+  window.onload=function(){
+  $(function(){
+    if(window.location.protocol==="https:")
+      window.location.protocol="http";
+    });
+  };
+
   $scope.user = $auth.getPayload().user;
 
   populateChart = function (){
