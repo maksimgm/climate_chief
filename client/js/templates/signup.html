@@ -1,10 +1,10 @@
 <div class="well col-xs-6 col-xs-offset-3">
   <h1 class="text-center">Signup</h1><br>
   <form method="post" ng-submit="signup()" name="signupForm">
-    <div class="form-group has-feedback" ng-class="{ 'has-error' : signupForm.email.$invalid && signupForm.email.$dirty }">
+    <div class="form-group has-feedback">
       <input class="form-control input-lg" type="email" id="email" name="email" ng-model="user.email" placeholder="Email" required>
       <span class="ion-at form-control-feedback"></span>
-      <div class="help-block text-danger" ng-if="signupForm.email.$dirty" ng-messages="signupForm.email.$error">
+      <div class="help-block text-danger">
         <div ng-message="required">Your email address is required.</div>
         <div ng-message="pattern">Your email address is invalid.</div>
       </div>
@@ -29,8 +29,5 @@
       <small>Already have an account yet? <a href="/login">Login</a></small>
     </p>
     <br>
-
     <button class="btn btn-block btn-facebook" ng-click="authenticate('facebook')">Sign in with Facebook</button>
-    </div>
-  </form>
 </div>

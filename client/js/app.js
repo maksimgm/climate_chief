@@ -37,7 +37,7 @@ app.config(function($routeProvider, $locationProvider, $authProvider){
 
   $authProvider.facebook({
     clientId: '1684535625138001',
-    url: '/api/auth/facebook'
+    url: '/auth/facebook'
   });
 
   $authProvider.httpInterceptor = false;
@@ -67,5 +67,7 @@ app.config(function($routeProvider, $locationProvider, $authProvider){
     enabled: true,
     requireBase: false
   });
+
+
 
 });

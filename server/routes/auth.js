@@ -108,11 +108,12 @@ router.post('/login', function(req, res) {
  |--------------------------------------------------------------------------
  */
 router.post('/signup', function(req, res) {
+  console.log('REQUEST BODY', req.body);
   db.User.findOne({ email: req.body.email }, function(err, existingUser) {
     if (existingUser) {
       return res.status(409).send({ message: 'Email is already taken' });
     }
-    var user = new User({
+    var user = new db.User({
       email: req.body.email,
       password: req.body.password
     });

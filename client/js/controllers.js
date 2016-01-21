@@ -10,7 +10,8 @@
 // CONSIDER USING REDIS TO CACHE USER SEARCH
 
 // });
-app.controller('MainController', function($scope, $http, $filter) {
+app.controller('MainController', function($scope, $http, $filter, $auth) {
+  $scope.user = $auth.getPayload().user;
   populateChart = function (){
     $('#container').highcharts({
         title: {
@@ -326,7 +327,7 @@ app.controller('SignupController', function($scope, $location, $auth) {
   // };
   $scope.signup = function() {
     $auth.signup($scope.user)
-      .then(function(response) {
+      .then(function(response){
         $auth.setToken(response);
         $location.path('/');
         console.log('You have successfully created a new account and have been signed-in');
