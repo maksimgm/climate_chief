@@ -21,6 +21,7 @@
     "body-parser": "^1.14.2",
     "dotenv": "^1.2.0",
     "express": "^4.13.3",
+    "heroku-node": "^1.0.1",
     "jsonwebtoken": "^5.5.4",
     "moment": "^2.11.1",
     "mongoose": "^4.3.6",
