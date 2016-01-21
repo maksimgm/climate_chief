@@ -146,7 +146,7 @@ airQualityIndexGauage = function(val){
 
   // National Resource Energy Lab... Solar energy... Lat and Long.
   solarEnergy = function(){
-    var url = "//developer.nrel.gov/api/solar/solar_resource/v1.json?api_key=aaeAF66WRB6IQou8P3WqLT7XQjXROd27QuUS4FFG&lat="+ $scope.lat +"&lon="+ $scope.lng;
+    var url = "https://developer.nrel.gov/api/solar/solar_resource/v1.json?api_key=aaeAF66WRB6IQou8P3WqLT7XQjXROd27QuUS4FFG&lat="+ $scope.lat +"&lon="+ $scope.lng;
     $http.get(url).then(function(solar){
       objDni = solar.data.outputs.avg_dni.monthly;
         dniArr = _(objDni).toArray();
@@ -164,7 +164,7 @@ airQualityIndexGauage = function(val){
 
 
   weather = function(){
-    var url = "http://api.openweathermap.org/data/2.5/weather?lat="+ $scope.lat+"&lon="+ $scope.lng+"&appid=2de143494c0b295cca9337e1e96b00e0&units=imperial";
+    var url = "//api.openweathermap.org/data/2.5/weather?lat="+ $scope.lat+"&lon="+ $scope.lng+"&appid=2de143494c0b295cca9337e1e96b00e0&units=imperial";
     $http.get(url).then(function(weather){
       
       // CLOUD NUMBER...WHAT DOES THIS MEAN???
