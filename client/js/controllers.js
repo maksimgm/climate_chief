@@ -1,9 +1,5 @@
 // TODOS....
-// BACKEND SET UP AUTH FOR USERS...CHECK OUT NEW BRANCH
-// CHOOSE THEME AND ADD STATIC PAGES...BOOTSWATCH THEME
-// USER EXPERIENCE...CLICK BUTTONS AND STYLING THE DIVS
-// DIVS
-// TOUCH UP ON THE STYLING
+// make the app more responsive
 
     // Adds autocomplete to trip form location text field
 //GOOGLE MAPS AUTO COMPLETE API = AIzaSyDRtPelzvMVwlTwyQuhN-goYUByFUVNlIo
@@ -74,7 +70,6 @@ app.controller('MainController', function($scope, $http, $filter, $auth) {
         }]
     });
 };
-
   // BTN DIV TOGGLE, 
   $scope.firstWrapper = false;
   $scope.firstToggle = function(){
@@ -108,13 +103,7 @@ app.controller('MainController', function($scope, $http, $filter, $auth) {
     $scope.thirdWrapper = false;
   };
 
-  // $scope.fourthWrapper = false;
-  // $scope.fourthToggle = function(){
-  //   if(($scope.firstWrapper || $scope.secondWrapper || $scope.thirdWrapper) === false){
-  //     $scope.fourthWrapper = !$scope.fourthWrapper;
-  //   }
-  // };
-  // $scope.fillerClick = function(){
+  
 
   // };
 // Air Now detailed air information... API call

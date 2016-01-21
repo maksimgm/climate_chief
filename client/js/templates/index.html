@@ -8,7 +8,7 @@
           <input id="pac-input" class="controls" type="text"
               placeholder="Enter a location">
               <!-- google map -->
-          <div id="map"></div>
+          <div id="map" ng-show="showMap" ng-init="(showMap=true)"></div>
       </div>
       <div class="col-xs-2" ng-hide="data == undefined">
         <button class="informationBtn" ng-click="mapToggle()">Map</button>
