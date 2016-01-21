@@ -164,7 +164,7 @@ airQualityIndexGauage = function(val){
 
 
   weather = function(){
-    var url = "//api.openweathermap.org/data/2.5/weather?lat="+ $scope.lat+"&lon="+ $scope.lng+"&appid=2de143494c0b295cca9337e1e96b00e0&units=imperial";
+    var url = "http://api.openweathermap.org/data/2.5/weather?lat="+ $scope.lat+"&lon="+ $scope.lng+"&appid=2de143494c0b295cca9337e1e96b00e0&units=imperial";
     $http.get(url).then(function(weather){
       
       // CLOUD NUMBER...WHAT DOES THIS MEAN???
