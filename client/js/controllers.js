@@ -146,7 +146,7 @@ airQualityIndexGauage = function(val){
 
   // National Resource Energy Lab... Solar energy... Lat and Long.
   solarEnergy = function(){
-    var url = "https://developer.nrel.gov/api/solar/solar_resource/v1.json?api_key=aaeAF66WRB6IQou8P3WqLT7XQjXROd27QuUS4FFG&lat="+ $scope.lat +"&lon="+ $scope.lng;
+    var url = "//developer.nrel.gov/api/solar/solar_resource/v1.json?api_key=aaeAF66WRB6IQou8P3WqLT7XQjXROd27QuUS4FFG&lat="+ $scope.lat +"&lon="+ $scope.lng;
     $http.get(url).then(function(solar){
       objDni = solar.data.outputs.avg_dni.monthly;
         dniArr = _(objDni).toArray();
