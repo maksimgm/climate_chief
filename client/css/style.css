@@ -82,6 +82,7 @@ body{
   background: #CF4647;
 }
 #pac-input {
+  border: 2px solid #428BCA;
   background-color: #fff;
   font-family: Roboto;
   font-size: 15px;
@@ -94,9 +95,6 @@ body{
   margin: 10px 0;
 }
 #foo{
-  /*padding-top: 10px;
-  padding-bottom:10px;
-  */
   padding-left: 0;
   padding-right: 0;
   margin-left: auto;
@@ -119,24 +117,12 @@ body{
   padding-right: 10px;
   padding-left: 10px;
 }
-.aqiDetails{
-  font-size: 14px;
-  display: inline;
-}
-/*.informationBtn{
-  display: block;
-  margin: 10px 0px;
-  border-radius: 10px;
-  background-color: lightblue;
-}*/
-.parentInfoContainer{
-  /*position: relative;*/
-}
 .dataWrapper{
   display: inline-block;
   width: 62.7%;
   height: 400px;
   background-color: #428BCA;
+  /*#f6ae29*/
   position: absolute;
   left: 2%;
   bottom: 8.5vh;
@@ -149,20 +135,6 @@ body{
   height: 150px;
   width: 40%;
 }
-.airDomPollutant{
-  /*display: inline-block;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  height: 350px;
-  width: 55%; 
-  float: right;
-  background-color: green;*/
-}
-/*wraps directional buttons to the right of the map*/
-/*
-.btnWrapper{
-
-}*/
 #container{
   /*/*width: 100%;
   margin: : 0 auto;*/
@@ -189,7 +161,7 @@ body{
   line-height: 30px;
   margin: 10px 10px;
   text-align: center;
-  border: 1px solid #FF9955;
+  border: 1px solid #f6ae29;
   border-radius: 5px;
   transition: all 0.3s ease 0s;
   float: right;
@@ -214,15 +186,12 @@ body{
   /*add scrool bar or auto scroll*/
   overflow: scroll;
   border: 2px solid #428BCA;
-  background-color: #FF9955;
+  background-color: #f6ae29;
   padding: 4px;
-}
-.airTable{
-  height: 
 }
 .jumbotron{
   background-attachment: fixed;
-  background-color: #FF9955;
+  background-color: #f6ae29;
   margin-top: 20px;
 }
 

@@ -169,32 +169,17 @@ airQualityIndexGauage = function(val){
       // CLOUD NUMBER...WHAT DOES THIS MEAN???
     // LEFT CLUSTER
 
-  $scope.weather = {
-    temp: weather.data.main.temp,
-    temp_min: weather.data.main.temp_min,
-    temp_max: weather.data.main.temp_max,
-    desc: weather.data.weather[0].description +" and "+ weather.data.weather[1].description,
-    clouds: weather.data.clouds.all,
-    pres: weather.data.main.pressure,
-    hum: weather.data.main.humidity,
-    wind_speed: weather.data.wind.speed,
-    wind_degree: weather.data.wind.deg
-  };
-  console.log($scope.weather);
-      // console.log("DESCRIPTITON1: "+weather.data.weather[0].description);
-      // console.log("DESCRIPTITON2: "+weather.data.weather[1].description);
-      // console.log("Temp: "+weather.data.main.temp);
-      // console.log("Temp MIN: "+weather.data.main.temp_min);
-      // console.log("Temp MAX: "+weather.data.main.temp_max);
-      
-      // RIGHT CLUSTER
-      // console.log("CLOUDS: "+weather.data.clouds);
-      // // main information
-      // console.log("Pressure: "+weather.data.main.pressure);
-      // console.log("humidity: "+weather.data.main.humidity);
-      //  console.log("wind degree: "+weather.data.wind.deg);
-      //  console.log("Wind Speed: "+weather.data.wind.speed);
-      
+    $scope.weather = {
+      temp: weather.data.main.temp,
+      temp_min: weather.data.main.temp_min,
+      temp_max: weather.data.main.temp_max,
+      desc: weather.data.weather[0].description +" and "+ weather.data.weather[1].description,
+      clouds: weather.data.clouds.all,
+      pres: weather.data.main.pressure,
+      hum: weather.data.main.humidity,
+      wind_speed: weather.data.wind.speed,
+      wind_degree: weather.data.wind.deg
+    };  
     });
   };
   
@@ -238,10 +223,7 @@ airQualityIndexGauage = function(val){
     autocomplete.bindTo('bounds', map);
 
     var infowindow = new google.maps.InfoWindow();
-    // var marker = new google.maps.Marker({
-    //   map: map,
-    //   anchorPoint: new google.maps.Point(0, -29)
-    // });
+    
 
     autocomplete.addListener('place_changed', function() {
       infowindow.close();
@@ -265,8 +247,6 @@ airQualityIndexGauage = function(val){
       breezeData();
       solarEnergy();
       weather();
-      // airData();
-      // CHECK TO SEE IF BREEZEOMETER DATA IS AVAILABLE. IF IT IS NOT AVAILABLE THEN RETURN A FLASH MESSAGE.
     });
   };
   $scope.initMap();
@@ -307,24 +287,24 @@ app.controller('LogoutController', function($location, $auth) {
 
 
 app.controller('SignupController', function($scope, $location, $auth) {
-  // $scope.authenticate = function(provider) {
-  // $auth.authenticate(provider)
-  //   .then(function() {
-  //     console.log('You have successfully signed in with ' + provider + '!');
-  //     $location.path('/home');
-  //   })
-  //   .catch(function(error) {
-  //     if (error.error) {
-  //       // Popup error - invalid redirect_uri, pressed cancel button, etc.
-  //       console.log(error.error);
-  //     } else if (error.data) {
-  //       // HTTP response error from server
-  //       console.log(error.data.message, error.status);
-  //     } else {
-  //       console.log(error);
-  //     }
-  // });
-  // };
+  $scope.authenticate = function(provider) {
+  $auth.authenticate(provider)
+    .then(function() {
+      console.log('You have successfully signed in with ' + provider + '!');
+      $location.path('/home');
+    })
+    .catch(function(error) {
+      if (error.error) {
+        // Popup error - invalid redirect_uri, pressed cancel button, etc.
+        console.log(error.error);
+      } else if (error.data) {
+        // HTTP response error from server
+        console.log(error.data.message, error.status);
+      } else {
+        console.log(error);
+      }
+  });
+  };
   $scope.signup = function() {
     $auth.signup($scope.user)
       .then(function(response){
