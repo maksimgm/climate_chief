@@ -213,30 +213,24 @@ FusionCharts.ready(function () {
         ghiArr = _(objGhi).toArray();
       objLatTilt = solar.data.outputs.avg_lat_tilt.monthly;
         latTiltArr = _(objLatTilt).toArray();
-      // console.log(dniArr);
-      console.log(objDni);
       populateChart();
     });
   };
 
 
   weather = function(){
-    var url = "https://api.forecast.io/forecast/08cbb7e1d105c2fd773a9a6fe2da0d91/"+$scope.lat+","+$scope.lng;
-    $http.get(url)
+    $http.get('/auth/weather/'+$scope.lat+'/'+$scope.lng)
     .success(function(weather){
-      console.log("this is working");
-      // $scope.weather = {
-      //   temp: weather.data.main.temp,
-      //   temp_min: weather.data.main.temp_min,
-      //   temp_max: weather.data.main.temp_max,
-      //   desc: weather.data.weather[0].description,
-      //   clouds: weather.data.clouds.all,
-      //   pres: weather.data.main.pressure,
-      //   hum: weather.data.main.humidity,
-      //   wind_speed: weather.data.wind.speed,
-      //   wind_degree: weather.data.wind.deg
-      // };
-      console.log(weather);
+      $scope.weather = {
+        temp: weather.body.currently.apparentTemperature,
+        cloud: weather.body.currently.cloudCover,
+        hum: weather.body.currently.humidity,
+        ozone: weather.body.currently.ozone,
+        pres: weather.body.currently.pressure,
+        windSpeed: weather.body.currently.windSpeed,
+        summary: weather.body.daily.summary,
+      };
+      // $scope.weather.hum = ($scope.weather.hum/1);
     });
   };
   
