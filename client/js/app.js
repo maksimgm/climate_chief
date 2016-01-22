@@ -1,4 +1,4 @@
-var app = angular.module("EssentialAir", ['ngRoute', 'satellizer']);
+var app = angular.module("EssentialAir", ['ngRoute', 'satellizer', 'ng-fusioncharts']);
 
 
 app.config(function($routeProvider, $locationProvider, $authProvider){

@@ -16,59 +16,129 @@ app.controller('MainController', function($scope, $http, $filter, $auth) {
   };
 
   $scope.user = $auth.getPayload().user;
-
-  populateChart = function (){
-    $('#container').highcharts({
-        title: {
-            text: 'Annual Solar Data',
-            x: -20 //center
+  
+populateChart = function(){
+FusionCharts.ready(function () {
+  var visitChart = new FusionCharts({
+    type: 'msline',
+    renderAt: 'chart-container',
+    width: '550',
+    height: '400',
+    backgroundColor: "#428BCA",
+    borderRadius: "3px",
+    margin: "0 auto",
+    dataFormat: 'json',
+    dataSource: {
+      "chart": {
+        "caption": "Annual Solar Data",
+        "subCaption": "All values in: kWh/m2/day",
+        "captionFontSize": "14",
+        "subcaptionFontSize": "14",
+        "subcaptionFontBold": "0",
+        "paletteColors": "#0075c2, #1aaf5d, #FF0000",
+        "showBorder": "0",
+        "showShadow": "0",
+        "showCanvasBorder": "0",
+        "usePlotGradientColor": "0",
+        "legendBorderAlpha": "0",
+        "legendShadow": "0",
+        "showAxisLines": "0",
+        "showAlternateHGridColor": "0",
+        "divlineThickness": "1",
+        "divLineIsDashed": "1",
+        "divLineDashLen": "1",
+        "divLineGapLen": "1",
+        "xAxisName": "Months",
+        "showValues": "0",
+        "exportenabled": "1",
+        "exportatclient": "0"               
+      },
+      "categories": [
+        {
+          "category": [
+            { "label": "Jan" }, 
+            { "label": "Feb" }, 
+            { "label": "Mar" },
+            { "label": "Apr" },
+            { "label": "May" },
+            { "label": "Jun" },
+            { "label": "Jul" },
+            { "label": "Aug" },
+            { "label": "Sep" },
+            { "label": "Oct" },
+            { "label": "Nov" },
+            { "label": "Dec" },
+          ]
+        }
+      ],
+      "dataset": [
+        {
+          "seriesname": "DNI",
+          "data": [
+              {"value": dniArr[0]},
+              {"value": dniArr[1]},
+              {"value": dniArr[2]},
+              {"value": dniArr[3]},
+              {"value": dniArr[4]},
+              {"value": dniArr[5]},
+              {"value": dniArr[6]},
+              {"value": dniArr[7]},
+              {"value": dniArr[8]},
+              {"value": dniArr[9]},
+              {"value": dniArr[10]},
+              {"value": dniArr[11]}
+            ]     
+        }, 
+        {
+          "seriesname": "GHI",
+          "data": [
+            {"value": ghiArr[0]},
+            {"value": ghiArr[1]},
+            {"value": ghiArr[2]},
+            {"value": ghiArr[3]},
+            {"value": ghiArr[4]},
+            {"value": ghiArr[5]},
+            {"value": ghiArr[6]},
+            {"value": ghiArr[7]},
+            {"value": ghiArr[8]},
+            {"value": ghiArr[9]},
+            {"value": ghiArr[10]},
+            {"value": ghiArr[11]}
+          ]
         },
-        subtitle: {
-            text: 'Source: National Resource Energy Lab',
-            x: -20
-        },
-        xAxis: {
-            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-                'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-        },
-        yAxis: {
-            title: {
-                text: 'kWh/m2/day'
-            },
-            plotLines: [{
-                value: 0,
-                width: 1,
-                color: '#FF9955'
-            }]
-        },
-        legend: {
-            layout: 'vertical',
-            align: 'right',
-            verticalAlign: 'middle',
-            borderWidth: 5
-        },
-        chart:{
-          // make responsive..
-          width: 350,
-          height: 300,
-          backgroundColor: "#EE7942",
-          borderRadius: 5,
-          border: 2,
-          borderSize: 4,
-          // margin: 0  ,
-          paddingLeft: 10
-        },
-        series: [{
-            name: 'DNI',
-            data: dniArr
-        }, {
-            name: 'GHI',
-            data: ghiArr
-        }, {
-            name: 'LT',
-            data: latTiltArr
-        }]
-    });
+        {
+          "seriesname": "Lat Tilt",
+          "data": [
+            {"value": latTiltArr[0]},
+            {"value": latTiltArr[1]},
+            {"value": latTiltArr[2]},
+            {"value": latTiltArr[3]},
+            {"value": latTiltArr[4]},
+            {"value": latTiltArr[5]},
+            {"value": latTiltArr[6]},
+            {"value": latTiltArr[7]},
+            {"value": latTiltArr[8]},
+            {"value": latTiltArr[9]},
+            {"value": latTiltArr[10]},
+            {"value": latTiltArr[11]}
+          ]
+        }
+      ], 
+      "trendlines": [
+        {
+          "line": [
+            {
+              // "startvalue": "17022",
+              "color": "#6baa01",
+              "valueOnRight": "1",
+              "displayvalue": "Annual Avg"
+            }
+          ]
+        }
+      ]
+    }
+  }).render();
+});
 };
   // BTN DIV TOGGLE, 
   $scope.firstWrapper = false;
@@ -105,41 +175,34 @@ app.controller('MainController', function($scope, $http, $filter, $auth) {
 
   
 
-  // };
-// Air Now detailed air information... API call
-
-  // use this date to plug into the airData
-  // $scope.filterdatetime = $filter('date')(new Date(), 'yyyy MM dd');
-
-
 // gauge for air quality
-airQualityIndexGauage = function(val){
-  var opts = {
-    lines: 12,
-    angle: 0.5,
-    lineWidth: 0.1,
-    limitMax: 'false', 
-    // percentColors: [[0, "#cccccc" ], [50, "#00ff00"], [100, "#00ff00"]], // !!!!
-    strokeColor: 'white',
-    generateGradient: false,
-      pointer: {
-      length: 0.9, // The radius of the inner circle
-      strokeWidth: 0.035, // The rotation offset
-    },
-    };
-    if (val < 33) {
-      opts.colorStart = 'red';
-    } else if(val < 67 && val > 33){
-      opts.colorStart = 'orange';
-    }else{
-      opts.colorStart = 'green';
-    }
-    var target = document.getElementById('foo'); // your canvas element
-    var gauge = new Donut(target).setOptions(opts); // create sexy gauge!
-    gauge.maxValue = 100; // set max gauge value
-    gauge.animationSpeed = 32; // set animation speed (32 is default value)
-    gauge.set(val); // set actual value
-};
+// airQualityIndexGauage = function(val){
+//   var opts = {
+//     lines: 12,
+//     angle: 0.5,
+//     lineWidth: 0.1,
+//     limitMax: 'false', 
+//     // percentColors: [[0, "#cccccc" ], [50, "#00ff00"], [100, "#00ff00"]], // !!!!
+//     strokeColor: 'white',
+//     generateGradient: false,
+//       pointer: {
+//       length: 0.9, // The radius of the inner circle
+//       strokeWidth: 0.035, // The rotation offset
+//     },
+//     };
+//     if (val < 33) {
+//       opts.colorStart = 'red';
+//     } else if(val < 67 && val > 33){
+//       opts.colorStart = 'orange';
+//     }else{
+//       opts.colorStart = 'green';
+//     }
+//     var target = document.getElementById('foo'); // your canvas element
+//     var gauge = new Donut(target).setOptions(opts); // create sexy gauge!
+//     gauge.maxValue = 100; // set max gauge value
+//     gauge.animationSpeed = 32; // set animation speed (32 is default value)
+//     gauge.set(val); // set actual value
+// };
 
   // National Resource Energy Lab... Solar energy... Lat and Long.
   solarEnergy = function(){
@@ -151,10 +214,8 @@ airQualityIndexGauage = function(val){
         ghiArr = _(objGhi).toArray();
       objLatTilt = solar.data.outputs.avg_lat_tilt.monthly;
         latTiltArr = _(objLatTilt).toArray();
-      // do the same for other two arrays
-      // return $scope.DniArr.forEach(function(ele,i,arr){
-      //   console.log(ele);
-      // });
+      // console.log(dniArr);
+      console.log(objDni);
       populateChart();
     });
   };
@@ -164,20 +225,17 @@ airQualityIndexGauage = function(val){
     var url = "http://api.openweathermap.org/data/2.5/weather?lat="+ $scope.lat+"&lon="+ $scope.lng+"&appid=2de143494c0b295cca9337e1e96b00e0&units=imperial";
     $http.get(url).then(function(weather){
       
-      // CLOUD NUMBER...WHAT DOES THIS MEAN???
-    // LEFT CLUSTER
-
-    $scope.weather = {
-      temp: weather.data.main.temp,
-      temp_min: weather.data.main.temp_min,
-      temp_max: weather.data.main.temp_max,
-      desc: weather.data.weather[0].description,
-      clouds: weather.data.clouds.all,
-      pres: weather.data.main.pressure,
-      hum: weather.data.main.humidity,
-      wind_speed: weather.data.wind.speed,
-      wind_degree: weather.data.wind.deg
-    };  
+      $scope.weather = {
+        temp: weather.data.main.temp,
+        temp_min: weather.data.main.temp_min,
+        temp_max: weather.data.main.temp_max,
+        desc: weather.data.weather[0].description,
+        clouds: weather.data.clouds.all,
+        pres: weather.data.main.pressure,
+        hum: weather.data.main.humidity,
+        wind_speed: weather.data.wind.speed,
+        wind_degree: weather.data.wind.deg
+      };  
     });
   };
   
@@ -201,7 +259,7 @@ airQualityIndexGauage = function(val){
         dominantPollutant: data.data.dominant_pollutant_description,
         pollutionEffects: data.data.dominant_pollutant_text.effects
       };
-      airQualityIndexGauage($scope.data.airQualityIndex);      
+      // airQualityIndexGauage($scope.data.airQualityIndex);      
     });
   };
 
@@ -244,6 +302,7 @@ airQualityIndexGauage = function(val){
       $scope.lng = place.geometry.location.lng();
       breezeData();
       weather();
+      // populateChart();
       solarEnergy();
     });
   };

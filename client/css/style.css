@@ -123,7 +123,7 @@ h1,h2,h3,h4,h5,h6,p,span{
   bottom: 0px;
   padding: 10px;
   border-radius: 5px;
-  bottom: 2px solid #428BCA;
+  border: 2px solid #428BCA;
 }
 /*media query for data wrapper moving up*/
 /*@media{
@@ -152,23 +152,24 @@ h1,h2,h3,h4,h5,h6,p,span{
   background: #428BCA;
   display: inline-block;
   color: #fff;
-  font-family: Sans-serif;
+  font-family: Roboto;
   font-size: 14px;
-  height: 40px;
+  height: 35px;
   width: 70px;
   line-height: 30px;
-  margin: 10px 10px;
+  letter-spacing: 1.2 
+  
   text-align: center;
   border: 1px solid #f6ae29;
   border-radius: 5px;
   transition: all 0.3s ease 0s;
-  float: right;
-  clear: both;
-  /*margin: 10px 5px 10px 5px;*/
+  /*float: right;
+  clear: both;*/
+  margin: 10px 5px 10px 5px;
 }
 /*refactor using ng- animations*/
 .solarBtn:hover {
-  box-shadow: inset 0 0 0 5px #CF4647;
+  box-shadow: inset 0 0 0 5px #f6ae29;
 }
 
 
@@ -241,4 +242,8 @@ h1,h2,h3,h4,h5,h6,p,span{
 .btn-facebook:focus {
   color: #fff;
   background-color: #294786;
+}
+svg{
+  background: #428BCA !important;
+  margin: 0 auto;
 }
