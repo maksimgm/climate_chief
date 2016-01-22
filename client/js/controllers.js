@@ -8,12 +8,12 @@
 // });
 app.controller('MainController', function($scope, $http, $filter, $auth) {
   
-  window.onload=function(){
-  $(function(){
-    if(window.location.protocol==="https:")
-      window.location.protocol="http";
-    });
-  };
+  // window.onload=function(){
+  // $(function(){
+  //   if(window.location.protocol==="https:")
+  //     window.location.protocol="http";
+  //   });
+  // };
 
   $scope.user = $auth.getPayload().user;
   
@@ -128,7 +128,6 @@ FusionCharts.ready(function () {
         {
           "line": [
             {
-              // "startvalue": "17022",
               "color": "#6baa01",
               "valueOnRight": "1",
               "displayvalue": "Annual Avg"
@@ -222,20 +221,22 @@ FusionCharts.ready(function () {
 
 
   weather = function(){
-    var url = "http://api.openweathermap.org/data/2.5/weather?lat="+ $scope.lat+"&lon="+ $scope.lng+"&appid=2de143494c0b295cca9337e1e96b00e0&units=imperial";
-    $http.get(url).then(function(weather){
-      
-      $scope.weather = {
-        temp: weather.data.main.temp,
-        temp_min: weather.data.main.temp_min,
-        temp_max: weather.data.main.temp_max,
-        desc: weather.data.weather[0].description,
-        clouds: weather.data.clouds.all,
-        pres: weather.data.main.pressure,
-        hum: weather.data.main.humidity,
-        wind_speed: weather.data.wind.speed,
-        wind_degree: weather.data.wind.deg
-      };  
+    var url = "https://api.forecast.io/forecast/08cbb7e1d105c2fd773a9a6fe2da0d91/"+$scope.lat+","+$scope.lng;
+    $http.get(url)
+    .success(function(weather){
+      console.log("this is working");
+      // $scope.weather = {
+      //   temp: weather.data.main.temp,
+      //   temp_min: weather.data.main.temp_min,
+      //   temp_max: weather.data.main.temp_max,
+      //   desc: weather.data.weather[0].description,
+      //   clouds: weather.data.clouds.all,
+      //   pres: weather.data.main.pressure,
+      //   hum: weather.data.main.humidity,
+      //   wind_speed: weather.data.wind.speed,
+      //   wind_degree: weather.data.wind.deg
+      // };
+      console.log(weather);
     });
   };
   
@@ -302,7 +303,6 @@ FusionCharts.ready(function () {
       $scope.lng = place.geometry.location.lng();
       breezeData();
       weather();
-      // populateChart();
       solarEnergy();
     });
   };
