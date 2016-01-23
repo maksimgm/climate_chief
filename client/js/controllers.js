@@ -174,34 +174,7 @@ FusionCharts.ready(function () {
 
   
 
-// gauge for air quality
-// airQualityIndexGauage = function(val){
-//   var opts = {
-//     lines: 12,
-//     angle: 0.5,
-//     lineWidth: 0.1,
-//     limitMax: 'false', 
-//     // percentColors: [[0, "#cccccc" ], [50, "#00ff00"], [100, "#00ff00"]], // !!!!
-//     strokeColor: 'white',
-//     generateGradient: false,
-//       pointer: {
-//       length: 0.9, // The radius of the inner circle
-//       strokeWidth: 0.035, // The rotation offset
-//     },
-//     };
-//     if (val < 33) {
-//       opts.colorStart = 'red';
-//     } else if(val < 67 && val > 33){
-//       opts.colorStart = 'orange';
-//     }else{
-//       opts.colorStart = 'green';
-//     }
-//     var target = document.getElementById('foo'); // your canvas element
-//     var gauge = new Donut(target).setOptions(opts); // create sexy gauge!
-//     gauge.maxValue = 100; // set max gauge value
-//     gauge.animationSpeed = 32; // set animation speed (32 is default value)
-//     gauge.set(val); // set actual value
-// };
+
 
   // National Resource Energy Lab... Solar energy... Lat and Long.
   solarEnergy = function(){
@@ -230,16 +203,13 @@ FusionCharts.ready(function () {
         windSpeed: weather.body.currently.windSpeed,
         summary: weather.body.daily.summary,
       };
-      // $scope.weather.hum = ($scope.weather.hum/1);
     });
   };
-  
-
 
 
 
 // breezeOmeter air info... API call
-  var breezeData = function(){
+  breezeData = function(){
     var url = "https://api.breezometer.com/baqi/?lat="+ $scope.lat +"&lon="+ $scope.lng +"&key=1827fecc1c064b05b2e2d07f90961a74";
     $http.get(url).then(function(data){
       if(data.data.data_valid === false){
@@ -254,11 +224,23 @@ FusionCharts.ready(function () {
         dominantPollutant: data.data.dominant_pollutant_description,
         pollutionEffects: data.data.dominant_pollutant_text.effects
       };
-      // airQualityIndexGauage($scope.data.airQualityIndex);      
+      airQualityIndexGauage(data.data.breezometer_aqi);
     });
   };
 
-  $scope.initMap = function() {
+  // gauge for air quality
+  airQualityIndexGauage = function(val){
+    console.log("in air quality");
+    var g = new JustGage({
+      id: "gauge",
+      value: val,
+      min: 0,
+      max: 100,
+      title: "Local Air Quality"
+    });
+  };
+   function initMap() {
+    
     var map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: 40.7833, lng: -85.4167},
       zoom: 8
@@ -299,9 +281,8 @@ FusionCharts.ready(function () {
       weather();
       solarEnergy();
     });
-  };
-  $scope.initMap();
-
+  }
+  initMap();
 });
 
 
