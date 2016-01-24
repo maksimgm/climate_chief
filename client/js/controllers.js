@@ -141,40 +141,29 @@ FusionCharts.ready(function () {
 });
 };
   // BTN DIV TOGGLE, 
-  $scope.firstWrapper = false;
-  $scope.firstToggle = function(){
-    debugger;
-    $scope.firstWrapper = true;
-    $scope.secondWrapper = false;
-    $scope.thirdWrapper = false;
-    $scope.showMap = false;
+  $scope.firstSolarWrapper = false;
+  $scope.firstSolarBtn = function(){
+    $scope.firstSolarWrapper = true;
+    $scope.secondSolarWrapper = false;
+    $scope.thirdSolarWrapper = false;
+    
   };
 // second wrapper
-  $scope.secondWrapper = false;
-  $scope.secondToggle = function(){
-    $scope.secondWrapper = !$scope.secondWrapper;
-    $scope.firstWrapper = false;
-    $scope.thirdWrapper = false;
-    $scope.showMap = false;
+  $scope.secondSolarWrapper = false;
+  $scope.secondSolarBtn = function(){
+    $scope.secondSolarWrapper = !$scope.secondSolarWrapper;
+    $scope.firstSolarWrapper = false;
+    $scope.thirdSolarWrapper = false;
+    
   };
 
-  $scope.thirdWrapper = false;
-  $scope.thirdToggle = function(){
-    $scope.thirdWrapper = !$scope.thirdWrapper;
-    $scope.firstWrapper = false;
-    $scope.secondWrapper = false;
-    $scope.showMap = false;
+  $scope.thirdSolarWrapper = false;
+  $scope.thirdSolarBtn = function(){
+    $scope.thirdSolarWrapper = !$scope.thirdSolarWrapper;
+    $scope.firstSolarWrapper = false;
+    $scope.secondSolarWrapper = false;
+    
   };
-
-  $scope.showMap = false;
-  $scope.mapToggle = function(){
-    $scope.showMap = !$scope.showMap;
-    $scope.firstWrapper = false;
-    $scope.secondWrapper = false; 
-    $scope.thirdWrapper = false;
-  };
-
-  
 
 
 
@@ -250,6 +239,41 @@ removeGauge = function(){
     });
   };
   
+
+ $scope.firstWrapper = false;
+  $scope.firstToggle = function(){
+    $scope.firstWrapper = true;
+    $scope.secondWrapper = false;
+    $scope.thirdWrapper = false;
+    $scope.showMap = false;
+  };
+// second wrapper
+  $scope.secondWrapper = false;
+  $scope.secondToggle = function(){
+    $scope.secondWrapper = !$scope.secondWrapper;
+    $scope.firstWrapper = false;
+    $scope.thirdWrapper = false;
+    $scope.showMap = false;
+  };
+
+  $scope.thirdWrapper = false;
+  $scope.thirdToggle = function(){
+    $scope.thirdWrapper = !$scope.thirdWrapper;
+    $scope.firstWrapper = false;
+    $scope.secondWrapper = false;
+    $scope.showMap = false;
+  };
+
+  $scope.showMap = false;
+  $scope.mapToggle = function(){
+    $scope.showMap = !$scope.showMap;
+    $scope.firstWrapper = false;
+    $scope.secondWrapper = false; 
+    $scope.thirdWrapper = false;
+  };
+
+
+
 
    function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
