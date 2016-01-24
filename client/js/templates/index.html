@@ -45,29 +45,43 @@
           </div>
           <!-- aside buttons...toogle between information -->
           <div class="dataWrapper" ng-show="secondWrapper">
+            <div class="row">
             <div class="col-xs-12">
               <div id="chart-container">FusionCharts will render here</div>
             </div>
-            <div class="col-xs-4">
-              <button  class="solarBtn" ng-click="firstSolarBtn()">DNI?</button>
             </div>
-            <div class="col-xs-4">
-              <button class="solarBtn" ng-click="secondSolarBtn()">GHI?</button>              
+            <div class="row">
+              <div class="col-xs-3">
+                <button  class="solarBtn" ng-click="firstSolarBtn()">
+                  <span class="solarinfoPara">DNI?</span>
+                </button>
+              </div>
+              <div class="col-xs-3">
+                <button class="solarBtn" ng-click="secondSolarBtn()">
+                  <span class="solarinfoPara">GHI?</span>
+                </button>              
+              </div>
+              <div class="col-xs-3">
+                <button class="solarBtn" ng-click="thirdSolarBtn()">
+                  <span class="solarinfoPara">Lat Tilt?</span>
+                </button>
+              </div>
+              <div class="col-xs-3">
+                <button class="solarBtn" ng-click="fourthSolarBtn()">
+                  <span class="solarinfoPara">X</span>
+                </button>
+              </div>
             </div>
-            <div class="col-xs-4">
-              <button class="solarBtn" ng-click="thirdSolarBtn()">Lat Tilt?</button>
-            </div>
-            
             <div class="solarWrapper" ng-show="firstSolarWrapper">
-              <span class="solarInfo">Direct Normal Irradiance is the amount of solar raidation received per unit area by a surface that is always held perpendicular to the rays that come in a straight line from the idrection of the sun at its current position in the sky. This data provides monthly average and annual average daily total solar resource averaged over surface cells of 0.1 degrees in both latitude and longitude, or about 10 km in size. The values returned are kWh/m2/day (kilowatt hours per square meter per day).</span>
+              <span class="solarInfo">This data provides monthly average and annual average daily total solar resource averaged over surface cells of 0.1 degrees in both latitude and longitude, or about 10 km in size. The values returned are kWh/m2/day (kilowatt hours per square meter per day). The insolation values represent the resource available to concentrating systems that track the sun throughout the day. </span>
               </div>
               <!-- make sure GHI -->
               <div class="solarWrapper" ng-show="secondSolarWrapper">
-              <span class="solarInfo">Global Horizontal Irradiance is the total amount of shortwave radiation receieved from above by a surface horizontal ot the ground. This value is of particular interest to photovoltaic instalations and includes Direct Normal Irradiance (DNI) and Diffuse Horizontal Irradiance (DIF).This data provides monthly average and annual average daily total solar resource averaged over surface cells of 0.1 degrees in both latitude and longitude, or about 10 km in size. The values returned are kWh/m2/day (kilowatt hours per square meter per day).</span>
+              <span class="solarInfo">This data provides monthly average and annual average daily total solar resource averaged over surface cells of 0.1 degrees in both latitude and longitude, or about 10 km in size. The values returned are kWh/m2/day (kilowatt hours per square meter per day). The insolation values represent the global horizontal resource - the geometric sum of direct normal and diffuse irradiance components, representing total energy available on a planar surface.</span>
               </div>
               <!-- make sure LAT TILT -->
               <div class="solarWrapper" ng-show="thirdSolarWrapper">
-              <span class="solarInfo">This data provides monthly average and annual average daily total solar resource averaged over surface cells of 0.1 degrees in both latitude and longitude, or about 10 km in size. The values returned are kWh/m2/day (kilowatt hours per square meter per day).</span>
+              <span class="solarInfo">This data provides monthly average and annual average daily total solar resource averaged over surface cells of 0.1 degrees in both latitude and longitude, or about 10 km in size. The values returned are kWh/m2/day (kilowatt hours per square meter per day). The insolation values represent the global horizontal resource - the geometric sum of direct normal and diffuse irradiance components, representing total energy available on a planar surface.</span>
             </div>
           </div>
         

@@ -165,6 +165,11 @@ FusionCharts.ready(function () {
     
   };
 
+  $scope.fourthSolarBtn = function(){
+    $scope.thirdSolarWrapper = false;
+    $scope.firstSolarWrapper = false;
+    $scope.secondSolarWrapper = false;
+  };
 
 
   // National Resource Energy Lab... Solar energy... Lat and Long.
