@@ -22,23 +22,25 @@
           <div class="dataWrapper" ng-show="firstWrapper">
           <div class="row">
               <div class="col-xs-6" id="gaugeContainer">
-                <div style="height:170px; width:200px;" id="gauge">Gauge will render</div>
+                <div id="gauge">Gauge will render</div>
               </div>
               <div class="col-xs-6 airDescWrapper">
-                <p class="ariDesc">You have {{data.airQualityDesc}}.</p>
+                <p class="airDesc">You have {{data.airQualityDesc}}.</p>
               </div>  
             </div>
-            <div class="col-xs-4">
-              <p class="airHeaders">Health Pollutants</p>
-                <p class="airDetails">{{data.healthRecommendations}}</p>
-            </div>
-            <div class="col-xs-4">
-              <p class="airHeaders">Domminant Pollutants</p>
-              <p class="airDetails">{{data.dominantPollutant}}</p>
-            </div>
-            <div class="col-xs-4">
-              <p class="airHeaders">Pollution Effects</p>
-              <p class="airDetails">{{data.pollutionEffects}}</p>
+            <div class="row">
+              <div class="col-xs-4">
+                <div class="airHeaders">Health Pollutants</div>
+                  <p class="airDetails">{{data.healthRecommendations}}</p>
+              </div>
+              <div class="col-xs-4">
+                <div class="airHeaders">Domminant Pollutants</div>
+                <p class="airDetails">{{data.dominantPollutant}}</p>
+              </div>
+              <div class="col-xs-4">
+                <div class="airHeaders">Pollution Effects</div>
+                <p class="airDetails">{{data.pollutionEffects}}</p>
+              </div>
             </div>
           </div>
           <!-- aside buttons...toogle between information -->

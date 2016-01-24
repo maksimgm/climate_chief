@@ -46,9 +46,32 @@ table {
   border-spacing: 0;
 }
 /*CUSTOM CSS*/
-h1,h2,h3,h4,h5,h6,p,span,.ariDesc{
+/*h1,h2,h3,h4,h5,h6,p,span,{
   letter-spacing: 1.1px;
   font-family: Roboto;
+}
+*/
+.jumbotron{
+  position: relative;
+  background-color: #f6ae29;
+  margin-top: 20px;
+}
+
+ /*==========  Non-Mobile First Method  ==========*/
+    /* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+  .jumbotron{
+    width: 100%;
+    height: 560px;
+  }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+  .jumbotron{
+    width: 100%;
+    height: 560px;
+  }
 }
 
 
@@ -57,6 +80,15 @@ h1,h2,h3,h4,h5,h6,p,span,.ariDesc{
   /*width: 90%;*/
   border: 2px solid #428BCA;
   border-radius: 5px;
+}
+#gauge{
+  height:170px; 
+  width: 300px;
+}
+
+tspan{
+  color: white;
+  /*letter-spacing: */
 }
 /*#map{
   padding: 10px;
@@ -91,7 +123,7 @@ h1,h2,h3,h4,h5,h6,p,span,.ariDesc{
   font-weight: 300;
   margin-left: 12px;
   padding: 0 11px 0 13px;
-  text-overflow: ellipsis;
+  overflow: ellipsis;
   width: 300px;
   padding: 5px;
   margin: 10px 0;
@@ -100,29 +132,32 @@ h1,h2,h3,h4,h5,h6,p,span,.ariDesc{
   float: right;
   padding: 5px 3px;
 }
-.aqiDesContainer{
-  display: inline-block;
-  margin-top: 20px;
-  line-height: 20px;
-}
-.airDescWrapper{
-  display: inline-block;
-  padding-top: 50px;
-}
-.ariDesc{ 
-  line-height: 1.8;
-  letter-spacing: 2.1px;
+
+.airDesc{ 
+  letter-spacing: 2.4px;
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: bold;
+  padding-top: 70px;
+  color: white;
+  line-height: 1.7;
+  color: #606060;
+  font-variant: small-caps;
 }
 .airHeaders{
+  display: inline-block;
   letter-spacing: 1.9px;
-  line-height: 1.2px;
   font-weight: bold;
+  padding-bottom: 10px;
+  padding-top: 20px;
+  color: #606060;
+  font-variant: small-caps;
 }
 .dataWrapper{
   display: inline-block;
   width: 70.7%;
   height: 400px;
-  background-color: #428BCA;
+  background-color: #87CEFA;
   position: absolute;
   bottom: 0px;
   padding: 10px;
@@ -137,10 +172,11 @@ h1,h2,h3,h4,h5,h6,p,span,.ariDesc{
   line-height: 1.2;
 }
 .airDetails{
-  overflow: auto;
-  letter-spacing: 1.2px;
-  line-height: 1.2px;
-  font-size: 12px;
+  font-size: 12px !important;
+  font-family: Roboto;
+  color: white;
+  letter-spacing: 1.4px;
+  line-height: 1.3;
 }
 .dataWrapper{
   overflow: auto;
@@ -155,7 +191,6 @@ h1,h2,h3,h4,h5,h6,p,span,.ariDesc{
   width: 70px;
   line-height: 30px;
   letter-spacing: 1.2 
-  
   text-align: center;
   border: 1px solid #f6ae29;
   border-radius: 5px;
@@ -169,7 +204,9 @@ h1,h2,h3,h4,h5,h6,p,span,.ariDesc{
   box-shadow: inset 0 0 0 5px #f6ae29;
 }
 
-
+svg #raphael-paper-0{
+  background-color: green;
+}
 .weatherWrapper{
   padding: 20px 10px;
   height: 350px;
@@ -184,44 +221,6 @@ h1,h2,h3,h4,h5,h6,p,span,.ariDesc{
   border: 2px solid #428BCA;
   background-color: #f6ae29;
   padding: 4px;
-}
-.jumbotron{
-  position: relative;
-  background-color: #f6ae29;
-  margin-top: 20px;
-}
-
- /*==========  Non-Mobile First Method  ==========*/
-    /* Medium Devices, Desktops */
-@media only screen and (max-width : 992px) {
-  .jumbotron{
-    width: 100%;
-    height: 560px;
-  }
-}
-
-/* Small Devices, Tablets */
-@media only screen and (max-width : 768px) {
-  .jumbotron{
-    width: 100%;
-    height: 560px;
-  }
-}
-
-/* Extra Small Devices, Phones */ 
-@media only screen and (max-width : 480px) {
-  .jumbotron{
-    width: 100%;
-    height: 560px;
-  }
-}
-
-/* Custom, iPhone Retina */ 
-@media only screen and (max-width : 320px) {
-  .jumbotron{
-    width: 100%;
-    height: 560px;
-  }   
 }
 .climateInfo{
   font-size: 40px;
@@ -240,7 +239,7 @@ h1,h2,h3,h4,h5,h6,p,span,.ariDesc{
   color: #fff;
   background-color: #294786;
 }
-svg{
-  background: #428BCA !important;
+/*svg{
+  background: #87CEFA;
   margin: 0 auto;
-}
+}*/

@@ -23,13 +23,14 @@ FusionCharts.ready(function () {
     type: 'msline',
     renderAt: 'chart-container',
     width: '550',
-    height: '400',
+    height: '350',
     backgroundColor: "#428BCA",
     borderRadius: "3px",
     margin: "0 auto",
     dataFormat: 'json',
     dataSource: {
       "chart": {
+        "backgroundColor": "red",
         "caption": "Annual Solar Data",
         "subCaption": "All values in: kWh/m2/day",
         "captionFontSize": "14",
@@ -208,6 +209,7 @@ FusionCharts.ready(function () {
 
 removeGauge = function(){
   var element = document.getElementById("gauge");
+  var gaugeSvg;
   if(!!element.firstChild){
     gaugeSvg = document.getElementsByTagName("svg");
     element.removeChild(element.firstChild);    
@@ -224,7 +226,6 @@ removeGauge = function(){
         return;
       }
       removeGauge();
-
       $scope.data = {
         airQualityDesc: data.data.breezometer_description,
         airQualityIndex: data.data.breezometer_aqi,
@@ -232,8 +233,6 @@ removeGauge = function(){
         dominantPollutant: data.data.dominant_pollutant_description,
         pollutionEffects: data.data.dominant_pollutant_text.effects
       };
-      
-      
       airQualityIndexGauage(data.data.breezometer_aqi);
     });
   };
@@ -252,7 +251,7 @@ removeGauge = function(){
 
    function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: 40.7833, lng: -85.4167},
+      center: {lat: 37.7833, lng: -85.4167},
       zoom: 8
     });
     var input = /** @type {!HTMLInputElement} */(
