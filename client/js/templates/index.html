@@ -18,14 +18,15 @@
       </div>
       <div class="col-xs-12">
         <!-- Air Quality Info -->
-            <div style="height:100px; width:100px;" id="gauge">Gauge will render</div>
             
           <div class="dataWrapper" ng-show="firstWrapper">
             <div class="col-xs-6">
               <p class="ariDesc pull-right">You have {{data.airQualityDesc}}.</p>
               <p class="ariDesc pull-left"><strong>{{data.airQualityIndex}}</strong> out of 100</p>
             </div>  
-            
+            <div class="col-xs-6" id="gaugeContainer">
+              <div style="height:100px; width:100px;" id="gauge">Gauge will render</div>
+            </div>
             <div class="col-xs-4 airDetails">
               <p>Health Pollutants</p>
               <div class="solarInfo">

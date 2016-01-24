@@ -206,7 +206,13 @@ FusionCharts.ready(function () {
     });
   };
 
-
+removeGauge = function(){
+  var element = document.getElementById("gauge");
+  if(!!element.firstChild){
+    gaugeSvg = document.getElementsByTagName("svg");
+    element.removeChild(element.firstChild);    
+  }
+};
 
 // breezeOmeter air info... API call
   breezeData = function(){
@@ -217,6 +223,8 @@ FusionCharts.ready(function () {
         alert(data.data.error.message);
         return;
       }
+      removeGauge();
+
       $scope.data = {
         airQualityDesc: data.data.breezometer_description,
         airQualityIndex: data.data.breezometer_aqi,
@@ -224,6 +232,8 @@ FusionCharts.ready(function () {
         dominantPollutant: data.data.dominant_pollutant_description,
         pollutionEffects: data.data.dominant_pollutant_text.effects
       };
+      
+      
       airQualityIndexGauage(data.data.breezometer_aqi);
     });
   };
@@ -233,21 +243,21 @@ FusionCharts.ready(function () {
     console.log("in air quality");
     var g = new JustGage({
       id: "gauge",
+      class : 'currentGage',
       value: val,
       min: 0,
       max: 100,
       title: "Local Air Quality"
     });
   };
+
    function initMap() {
-    
     var map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: 40.7833, lng: -85.4167},
       zoom: 8
     });
     var input = /** @type {!HTMLInputElement} */(
-        document.getElementById('pac-input'));
-// add a submit button
+    document.getElementById('pac-input'));
     var types = document.getElementById('type-selector');
     map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
     map.controls[google.maps.ControlPosition.TOP_LEFT].push(types);
@@ -277,6 +287,7 @@ FusionCharts.ready(function () {
       }
       $scope.lat = place.geometry.location.lat();
       $scope.lng = place.geometry.location.lng();
+      
       breezeData();
       weather();
       solarEnergy();
