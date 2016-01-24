@@ -19,7 +19,7 @@
       <div class="col-xs-12">
         <!-- Air Quality Info -->
             
-          <div class="dataWrapper" ng-show="firstWrapper">
+          <div class="dataWrapper secondContainer" ng-show="firstWrapper">
           <div class="row">
               <div class="col-xs-6" id="gaugeContainer">
                 <div id="gauge">Gauge will render</div>
@@ -69,12 +69,28 @@
           </div>
         
           <div class="dataWrapper" ng-show="thirdWrapper">
-            <div class="weatherWrapper col-xs-8 col-xs-offset-2 solarInfo text-center">
-              <!-- weather column 1 -->
-              <i ng-if="weather.temp > 65" class="wi wi-day-sunny climateInfo"></i>
+          <!-- below hadstyle of class  solarInfo weatherWrapper-->
+            <div class="col-xs-12 weatherWrapper">
+              <div class="row firstWeatherRow">
+                <div class="col-xs-4"></div>
+                <div class="col-xs-4"></div>
+                <div class="col-xs-4"></div>
+              </div>
+              <div class="row secondWeatherRow">
+                <div class="col-xs-12"></div>
+              </div>
+              <div class="row thirdWeatherRow">
+                <div class="col-xs-4"></div>
+                <div class="col-xs-4"></div>
+                <div class="col-xs-4"></div>
+              </div>
+
+
+
+              <!-- <i ng-if="weather.temp > 65" class="wi wi-day-sunny climateInfo"></i>
               <i ng-if="weather.temp < 64" class="wi wi-day-cloudy-windy climateInfo"></i>
-              <br>
-              
+              <br> -->
+              <!-- 
               <p>Temperature {{weather.temp}}°F</p><br>
               <p>Expect: {{weather.summary}}</p><br>
               <i class="wi wi-day-cloudy climateInfo"></i>
@@ -83,7 +99,7 @@
               <p>Pressure(Pa){{weather.pres}}</p><br>
               <p>Humidity {{weather.hum*(100) }} <i class="wi wi-humidity climateInfo"></i></p><br>
               <i class="wi wi-strong-wind climateInfo"></i>
-              <p>Wind Speed {{weather.windSpeed}}</p><br>
+              <p>Wind Speed {{weather.windSpeed}}</p><br> -->
               
               
               

@@ -1,4 +1,4 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
+ http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -163,6 +163,10 @@ tspan{
   padding: 10px;
   border-radius: 5px;
   border: 2px solid #428BCA;
+  overflow: auto;
+}
+.secondContainer{
+  background-color: #65b8ec;
 }
 .solarInfo{
   display: inline-block;
@@ -177,9 +181,6 @@ tspan{
   color: white;
   letter-spacing: 1.4px;
   line-height: 1.3;
-}
-.dataWrapper{
-  overflow: auto;
 }
 .solarBtn{
   background: #428BCA;
@@ -203,13 +204,24 @@ tspan{
 .solarBtn:hover {
   box-shadow: inset 0 0 0 5px #f6ae29;
 }
-
-svg #raphael-paper-0{
-  background-color: green;
+/*targets svg chart */
+.raphael-group-1-background rect{
+  fill: #65b8ec !important;
+  margin: 0 auto;
 }
 .weatherWrapper{
-  padding: 20px 10px;
-  height: 350px;
+  height: 100%;
+  width: 100%;
+}
+.firstWeatherRow .thirdWeatherRow{
+  height: 40%;
+  width: 100%;
+  background-color: grey;
+}
+.secondWeatherRow{
+  height: 10%;
+  width: 100%;
+  background-color: #606060;
 }
 .thisPlaceHodler{
   margin-top: 10px;
@@ -225,7 +237,7 @@ svg #raphael-paper-0{
 .climateInfo{
   font-size: 40px;
 }
-.weatherWrapper.solarInfo{
+.solarInfo{
   overflow: scroll;
 }
 .btn-facebook {
@@ -239,7 +251,7 @@ svg #raphael-paper-0{
   color: #fff;
   background-color: #294786;
 }
-/*svg{
+svg{
   background: #87CEFA;
   margin: 0 auto;
-}*/
+}
