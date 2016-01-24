@@ -248,6 +248,30 @@ removeGauge = function(){
       title: "Local Air Quality"
     });
   };
+  
+  $scope.firstWrapper = false;
+  $scope.firstToggle = function(){
+    $scope.firstWrapper = !$scope.firstWrapper;
+    $scope.secondWrapper = false;
+    $scope.thirdWrapper = false;
+    $scope.showMap = false;
+  };
+// second wrapper
+  $scope.secondWrapper = false;
+  $scope.secondToggle = function(){
+    $scope.secondWrapper = !$scope.secondWrapper;
+    $scope.firstWrapper = false;
+    $scope.thirdWrapper = false;
+    $scope.showMap = false;
+  };
+
+  $scope.thirdWrapper = false;
+  $scope.thirdToggle = function(){
+    $scope.thirdWrapper = !$scope.thirdWrapper;
+    $scope.firstWrapper = false;
+    $scope.secondWrapper = false;
+    $scope.showMap = false;
+  };
 
    function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
