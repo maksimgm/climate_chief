@@ -240,7 +240,6 @@ removeGauge = function(){
 
   // gauge for air quality
   airQualityIndexGauage = function(val){
-    console.log("in air quality");
     var g = new JustGage({
       id: "gauge",
       class : 'currentGage',

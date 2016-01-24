@@ -46,7 +46,7 @@ table {
   border-spacing: 0;
 }
 /*CUSTOM CSS*/
-h1,h2,h3,h4,h5,h6,p,span{
+h1,h2,h3,h4,h5,h6,p,span,.ariDesc{
   letter-spacing: 1.1px;
   font-family: Roboto;
 }
@@ -105,16 +105,18 @@ h1,h2,h3,h4,h5,h6,p,span{
   margin-top: 20px;
   line-height: 20px;
 }
-.aqiHeader{
+.airDescWrapper{
   display: inline-block;
-  float: left;
-  font-weight: bold; 
+  padding-top: 50px;
 }
-.ariDesc{
-  font-size: 18px;
-  text-align: middle;
-  padding-right: 10px;
-  padding-left: 10px;
+.ariDesc{ 
+  line-height: 1.8;
+  letter-spacing: 2.1px;
+}
+.airHeaders{
+  letter-spacing: 1.9px;
+  line-height: 1.2px;
+  font-weight: bold;
 }
 .dataWrapper{
   display: inline-block;
@@ -127,15 +129,6 @@ h1,h2,h3,h4,h5,h6,p,span{
   border-radius: 5px;
   border: 2px solid #428BCA;
 }
-/*media query for data wrapper moving up*/
-/*@media{
-  .dataWrapper{}
-}*/
-.airQualityIndex{
-  display: inline-block;
-  height: 150px;
-  width: 40%;
-}
 .solarInfo{
   display: inline-block;
   padding: 5px;
@@ -145,7 +138,9 @@ h1,h2,h3,h4,h5,h6,p,span{
 }
 .airDetails{
   overflow: auto;
-  padding-top: 3px
+  letter-spacing: 1.2px;
+  line-height: 1.2px;
+  font-size: 12px;
 }
 .dataWrapper{
   overflow: auto;

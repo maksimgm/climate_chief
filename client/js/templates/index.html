@@ -20,26 +20,25 @@
         <!-- Air Quality Info -->
             
           <div class="dataWrapper" ng-show="firstWrapper">
-            <div class="col-xs-6">
-              <p class="ariDesc pull-right">You have {{data.airQualityDesc}}.</p>
-              <p class="ariDesc pull-left"><strong>{{data.airQualityIndex}}</strong> out of 100</p>
-            </div>  
-            <div class="col-xs-6" id="gaugeContainer">
-              <div style="height:100px; width:100px;" id="gauge">Gauge will render</div>
-            </div>
-            <div class="col-xs-4 airDetails">
-              <p>Health Pollutants</p>
-              <div class="solarInfo">
-                {{data.healthRecommendations}}
+          <div class="row">
+              <div class="col-xs-6" id="gaugeContainer">
+                <div style="height:170px; width:200px;" id="gauge">Gauge will render</div>
               </div>
+              <div class="col-xs-6 airDescWrapper">
+                <p class="ariDesc">You have {{data.airQualityDesc}}.</p>
+              </div>  
             </div>
-            <div class="col-xs-4 airDetails">
-              <p>Domminant Pollutants</p>
-              <div class="solarInfo">{{data.dominantPollutant}}</div>
+            <div class="col-xs-4">
+              <p class="airHeaders">Health Pollutants</p>
+                <p class="airDetails">{{data.healthRecommendations}}</p>
             </div>
-            <div class="col-xs-4 airDetails">
-              <p>Pollution Effects</p>
-              <div class="solarInfo">{{data.pollutionEffects}}</div>
+            <div class="col-xs-4">
+              <p class="airHeaders">Domminant Pollutants</p>
+              <p class="airDetails">{{data.dominantPollutant}}</p>
+            </div>
+            <div class="col-xs-4">
+              <p class="airHeaders">Pollution Effects</p>
+              <p class="airDetails">{{data.pollutionEffects}}</p>
             </div>
           </div>
           <!-- aside buttons...toogle between information -->
