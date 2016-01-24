@@ -19,7 +19,7 @@
       <div class="col-xs-12">
         <!-- Air Quality Info -->
             
-          <div class="dataWrappers" ng-show="firstWrapper">
+          <div class="dataWrapper secondContainer" ng-show="firstWrapper">
           <div class="row">
               <div class="col-xs-6" id="gaugeContainer">
                 <div id="gauge">Gauge will render</div>
@@ -48,17 +48,14 @@
             <div class="col-xs-12">
               <div id="chart-container">FusionCharts will render here</div>
             </div>
-            <div class="row">
             <div class="col-xs-4">
-              <button ng-mousedown="dhi = !dhi" class="solarBtn">
-              <span>DNI?</span></button>
+              <button ng-mousedown="dhi = !dhi" class="solarBtn">DNI?</button>
             </div>
             <div class="col-xs-4">
-              <button ng-mousedown="ghi = !ghi" class="solarBtn"><span>GHI?</span></button>
+              <button ng-mousedown="ghi = !ghi" class="solarBtn">GHI?</button>              
             </div>
             <div class="col-xs-4">
-              <button ng-mousedown="latTilt = !latTilt" class="solarBtn "><span>Lat Tilt?</span></button>
-            </div>
+              <button ng-mousedown="latTilt = !latTilt" class="solarBtn ">Lat Tilt?</button>
             </div>
             
             <div class="thisPlaceHodler">
