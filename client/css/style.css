@@ -154,16 +154,23 @@ body, .container-fluid, html{
   font-variant: small-caps;
 }
 .weatherDetails{
+  
+  padding-bottom: 10px;
+  padding-top: 20px;
+
+  padding-top: 40px;
+  /*padding-left: 50px;
+  */
+  margin: 0 auto;
+  
+}
+.weatherDeatails span{
   display: inline-block;
   letter-spacing: 1.9px;
   font-weight: bold;
   text-align: center;
-  padding-bottom: 10px;
-  padding-top: 20px;
   color: white;
   font-variant: small-caps;
-  padding-top: 40px;
-  padding-left: 50px;
   font-size: 13px !important;
 }
 .dataWrapper{
@@ -268,7 +275,10 @@ rect{
   font-size: 40px;
   padding-left: 60px;
 }
-
+.airPres{
+  padding-left: 60px;
+  margin: 0 auto;
+}
 .btn-facebook {
   color: #fff;
   background-color: #3b5998;
