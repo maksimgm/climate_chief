@@ -1,6 +1,6 @@
 
 <div class="container-fluid" >
-  <h1 class="text-center">Please Enter A Location</h1>
+  <h1 class="text-center homeHeader">Please Enter A Location</h1>
   <div class="row">
     <div class="col-md-12 jumbotron">
       <div class="col-xs-9">
@@ -11,10 +11,18 @@
           <div id="map" ng-show="showMap" ng-init="(showMap=true)"></div>
       </div>
       <div class="col-xs-2" ng-hide="data == undefined">
-        <button class="informationBtn" ng-click="mapToggle()">Map</button>
-        <button class="informationBtn" ng-click="firstToggle()">Air Quality</button>
-        <button class="informationBtn" ng-click="secondToggle()">Solar Efficency</button>
-        <button class="informationBtn" ng-click="thirdToggle()">Climate</button>
+        <button class="informationBtn" ng-click="mapToggle()">
+        <span>Map</span>
+        </button>
+        <button class="informationBtn" ng-click="firstToggle()">
+        <span>Air Quality</span>
+        </button>
+        <button class="informationBtn" ng-click="secondToggle()">
+        <span>Solar Efficency</span>
+        </button>
+        <button class="informationBtn" ng-click="thirdToggle()">
+        <span>Climate</span>
+        </button>
       </div>
       <div class="col-xs-12">
         <!-- Air Quality Info -->

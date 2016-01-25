@@ -256,7 +256,7 @@ removeGauge = function(){
 // second wrapper
   $scope.secondWrapper = false;
   $scope.secondToggle = function(){
-    $scope.secondWrapper = !$scope.secondWrapper;
+    $scope.secondWrapper = true;
     $scope.firstWrapper = false;
     $scope.thirdWrapper = false;
     $scope.showMap = false;
@@ -264,7 +264,7 @@ removeGauge = function(){
 
   $scope.thirdWrapper = false;
   $scope.thirdToggle = function(){
-    $scope.thirdWrapper = !$scope.thirdWrapper;
+    $scope.thirdWrapper = true;
     $scope.firstWrapper = false;
     $scope.secondWrapper = false;
     $scope.showMap = false;
@@ -272,14 +272,11 @@ removeGauge = function(){
 
   $scope.showMap = false;
   $scope.mapToggle = function(){
-    $scope.showMap = !$scope.showMap;
+    $scope.showMap = true;
     $scope.firstWrapper = false;
     $scope.secondWrapper = false; 
     $scope.thirdWrapper = false;
   };
-
-
-
 
    function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
