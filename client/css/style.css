@@ -136,13 +136,19 @@ body, .container-fluid, html{
 .airDesc{ 
   letter-spacing: 2.4px;
   font-family: Roboto;
-  font-size: 20px;
+  font-size: 20px !important;
   font-weight: bold;
   padding-top: 70px;
   color: white;
   line-height: 1.7;
   color: #606060;
   font-variant: small-caps;
+}
+@media(max-width:840px){
+  .airDesc{
+    font-size: 14px !important;
+    letter-spacing: 1.4px;
+  }
 }
 .airHeaders{
   display: inline-block;
@@ -154,25 +160,39 @@ body, .container-fluid, html{
   font-variant: small-caps;
 }
 .weatherDetails{
-  
+  display: inline-block;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+  text-align: center;
   padding-bottom: 10px;
   padding-top: 20px;
-
+  color: white;
+  font-variant: small-caps;
   padding-top: 40px;
   /*padding-left: 50px;
   */
   margin: 0 auto;
-  
-}
-.weatherDeatails span{
-  display: inline-block;
-  letter-spacing: 1.9px;
-  font-weight: bold;
-  text-align: center;
-  color: white;
-  font-variant: small-caps;
   font-size: 13px !important;
 }
+@media(max-width:1046px){
+  .weatherDetails{
+    padding-left: 0px;
+    font-size: 14px !important;
+  }
+}
+@media(max-width:950px){
+  .weatherDetails{
+    padding: 0px;
+    font-size: 12px !important;
+  }
+}
+@media(max-width:840px){
+  .weatherDetails{
+    padding: 0px;
+    font-size: 10px !important;
+  }
+}
+
 .dataWrapper{
   display: inline-block;
   width: 70.7%;
@@ -273,7 +293,7 @@ rect{
 }
 .climateInfo{
   font-size: 40px;
-  padding-left: 60px;
+  padding-left: 30px;
 }
 .airPres{
   padding-left: 60px;
