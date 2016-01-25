@@ -142,6 +142,19 @@ table {
   color: #606060;
   font-variant: small-caps;
 }
+.weatherDetails{
+  display: inline-block;
+  letter-spacing: 1.9px;
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: 10px;
+  padding-top: 20px;
+  color: white;
+  font-variant: small-caps;
+  padding-top: 40px;
+  padding-left: 50px;
+  font-size: 14px !important;
+}
 .dataWrapper{
   display: inline-block;
   width: 70.7%;
@@ -208,15 +221,23 @@ rect{
   height: 100%;
   width: 100%;
 }
+.singleWeatherWrapper{
+  height: 155px;
+  width: 33%;
+  background-color: #87CEFA;
+  padding-top: 25px;
+}
 .firstWeatherRow .thirdWeatherRow{
   height: 40%;
   width: 100%;
   background-color: grey;
 }
 .secondWeatherRow{
-  height: 10%;
+  height: 70px;
   width: 100%;
-  background-color: #606060;
+  background-color: #87CEFA;
+  text-align: center;
+
 }
 .solarWrapper{
   height: 80px;
@@ -235,7 +256,9 @@ rect{
 }
 .climateInfo{
   font-size: 40px;
+  padding-left: 80px;
 }
+
 .btn-facebook {
   color: #fff;
   background-color: #3b5998;

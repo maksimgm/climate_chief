@@ -199,6 +199,7 @@ FusionCharts.ready(function () {
         windSpeed: weather.body.currently.windSpeed,
         summary: weather.body.daily.summary,
       };
+      console.log($scope.weather);
     });
   };
 

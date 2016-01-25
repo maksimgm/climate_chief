@@ -89,17 +89,38 @@
           <!-- below hadstyle of class  solarInfo weatherWrapper-->
             <div class="col-xs-12 weatherWrapper">
               <div class="row firstWeatherRow">
-                <div class="col-xs-4"></div>
-                <div class="col-xs-4"></div>
-                <div class="col-xs-4"></div>
+                <div class="col-xs-4 singleWeatherWrapper">
+                  <i ng-if="weather.temp > 65" class="wi wi-day-sunny climateInfo"></i>
+                  <i ng-if="weather.temp < 64" class="wi wi-day-cloudy-windy climateInfo"></i>
+                  <p class="weatherDetails">Temperature-{{weather.temp}}°F</p>
+                </div>
+                <div class="col-xs-4 singleWeatherWrapper">
+                  <i class="wi wi-day-cloudy climateInfo"></i>
+                  <p class="weatherDetails">Cloud Cover-{{weather.cloud * (100)}}%</p>
+                </div>
+                <div class="col-xs-4 singleWeatherWrapper">
+                <i class="wi wi-smog climateInfo"></i>
+                 <p class="weatherDetails"> Ozone(Dobson units)-{{weather.ozone}}</p>
+                </div>
               </div>
-              <div class="row secondWeatherRow">
-                <div class="col-xs-12"></div>
+              <div class="row">
+                <div class="col-xs-12 secondWeatherRow">
+                  <span class="weatherDetails">{{weather.summary}}</span>>
+                </div>
               </div>
               <div class="row thirdWeatherRow">
-                <div class="col-xs-4"></div>
-                <div class="col-xs-4"></div>
-                <div class="col-xs-4"></div>
+                <div class="col-xs-4 singleWeatherWrapper">
+                  <i class="wi wi-barometer climateInfo"></i>
+                  <p class="weatherDetails">Pressure(Pa)-{{weather.pres}}</p>
+                </div>
+                <div class="col-xs-4 singleWeatherWrapper">
+                  <i class="wi wi-raindrops climateInfo"></i>
+                  <p class="weatherDetails">Humidity-{{weather.hum*(100) }}%</p>
+                </div>
+                <div class="col-xs-4 singleWeatherWrapper">
+                  <i class="wi wi-strong-wind climateInfo"></i>
+                  <p class="weatherDetails">Wind Speed-{{weather.windSpeed}} mph</p>
+                </div>
               </div>
 
 
