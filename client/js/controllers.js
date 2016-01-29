@@ -278,7 +278,7 @@ removeGauge = function(){
     $scope.thirdWrapper = false;
   };
 
-   function initMap() {
+   function initMap(){
     var map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: 37.7833, lng: -85.4167},
       zoom: 8
@@ -325,6 +325,12 @@ removeGauge = function(){
 
 
 app.controller("LoginController", function($scope, $auth, $location){
+  $scope.login = function() {
+      $auth.login($scope.user)
+        .then(function() {
+          $location.path('/home');
+        })
+    };
   $scope.authenticate = function(provider) {
   $auth.authenticate(provider)
     .then(function() {
