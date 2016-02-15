@@ -1,21 +1,6 @@
-// TODOS....
-// make the app more responsive
-
-    // Adds autocomplete to trip form location text field
-//GOOGLE MAPS AUTO COMPLETE API = AIzaSyDRtPelzvMVwlTwyQuhN-goYUByFUVNlIo
-// CONSIDER USING REDIS TO CACHE USER SEARCH
-
-// });
 app.controller('MainController', function($scope, $http, $filter, $auth) {
-  
-  // window.onload=function(){
-  // $(function(){
-  //   if(window.location.protocol==="https:")
-  //     window.location.protocol="http";
-  //   });
-  // };
 
-  $scope.user = $auth.getPayload().user;
+  // $scope.user = $auth.getPayload().user;
   
 populateChart = function(){
 FusionCharts.ready(function () {
