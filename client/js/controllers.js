@@ -309,10 +309,10 @@ removeGauge = function(){
 
 app.controller("LoginController", function($scope, $auth, $location){
   $scope.login = function() {
-      $auth.login($scope.user)
-        .then(function() {
-          $location.path('/home');
-        })
+    $auth.login($scope.user)
+      .then(function() {
+        $location.path('/home');
+      });
     };
   $scope.authenticate = function(provider) {
   $auth.authenticate(provider)

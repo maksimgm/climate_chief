@@ -45,8 +45,8 @@
       </div>
       <div class="collapse navbar-collapse" id="example-navbar-collapse">
       <ul class = "nav navbar-nav">
-       <li><a ng-href = "/login">Log In</a></li>
-       <li><a ng-href="/signup">Sign Up</a></li>
+       <li><a ng-class="{ 'hideNavInfo': !!user }" ng-href = "/login">Log In</a></li>
+       <li><a ng-class="{ 'hideNavInfo': !!user }" ng-href="/signup">Sign Up</a></li>
       <li><a ng-href="/logout">Log Out</a></li>
       <li><a ng-href="/about">About</a></li>
         <ul class = "dropdown-menu">
