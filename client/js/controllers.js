@@ -1,6 +1,4 @@
 app.controller('MainController', function($scope, $http, $filter, $auth) {
-
-  // $scope.user = $auth.getPayload().user;
   
 populateChart = function(){
 FusionCharts.ready(function () {
@@ -173,7 +171,7 @@ FusionCharts.ready(function () {
 
 
   weather = function(){
-    $http.get('/auth/weather/'+$scope.lat+'/'+$scope.lng)
+    $http.get('/apis/weather/'+$scope.lat+'/'+$scope.lng)
     .success(function(weather){
       $scope.weather = {
         temp: weather.body.currently.apparentTemperature,

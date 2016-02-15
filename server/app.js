@@ -16,6 +16,7 @@ app.use('/templates',express.static(path.join(__dirname, '../client/js/templates
 
 app.use('/api/users', routes.users);
 app.use('/auth', routes.auth);
+app.use('/apis', routes.apis);
 
 app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname, '../client', 'index.html'));
