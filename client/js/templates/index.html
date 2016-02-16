@@ -11,16 +11,16 @@
           <div id="map" ng-show="showMap" ng-init="(showMap=true)"></div>
       </div>
       <div class="col-xs-2" ng-hide="data == undefined">
-        <button class="informationBtn" ng-click="mapToggle()">
+        <button class="informationBtn" ng-model="toggle.map" ng-click="divToggle(toggle.map)">
         <span>Map</span>
         </button>
-        <button class="informationBtn" ng-click="firstToggle()">
+        <button class="informationBtn" ng-model="toggle.first" ng-click="divToggle(toggle.first)">
         <span>Air Quality</span>
         </button>
-        <button class="informationBtn" ng-click="secondToggle()">
+        <button class="informationBtn" ng-model="toggle.second" ng-click="divToggle(toggle.second)">
         <span>Solar Efficency</span>
         </button>
-        <button class="informationBtn" ng-click="thirdToggle()">
+        <button class="informationBtn" ng-model="toggle.third" ng-click="divToggle(toggle.third)">
         <span>Climate</span>
         </button>
       </div>

@@ -245,37 +245,22 @@ removeGauge = function(){
     });
   };
   
+  $scope.toggle={};
 
- $scope.firstWrapper = false;
-  $scope.firstToggle = function(){
-    $scope.firstWrapper = true;
-    $scope.secondWrapper = false;
-    $scope.thirdWrapper = false;
-    $scope.showMap = false;
-  };
-// second wrapper
-  $scope.secondWrapper = false;
-  $scope.secondToggle = function(){
-    $scope.secondWrapper = true;
-    $scope.firstWrapper = false;
-    $scope.thirdWrapper = false;
-    $scope.showMap = false;
-  };
+  var setupMap = _.once(function(){
+   $scope.toggle.map = true;
+  });
 
-  $scope.thirdWrapper = false;
-  $scope.thirdToggle = function(){
-    $scope.thirdWrapper = true;
-    $scope.firstWrapper = false;
-    $scope.secondWrapper = false;
-    $scope.showMap = false;
-  };
+  setupMap();
 
-  $scope.showMap = false;
-  $scope.mapToggle = function(){
-    $scope.showMap = true;
-    $scope.firstWrapper = false;
-    $scope.secondWrapper = false; 
-    $scope.thirdWrapper = false;
+
+  $scope.divToggle = function(a){
+    $scope.toggle.map = false;
+    $scope.toggle.first = false;
+    $scope.toggle.second = false;
+    $scope.toggle.third= false;  
+    a = true;
+    return $scope.toggle;
   };
 
    function initMap(){
