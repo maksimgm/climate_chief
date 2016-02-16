@@ -248,19 +248,21 @@ removeGauge = function(){
   $scope.toggle={};
 
   var setupMap = _.once(function(){
-   $scope.toggle.map = true;
+    $scope.toggle.map = true;
+    $scope.toggle.first = false;
+    $scope.toggle.second = false;
+    $scope.toggle.third = false;
   });
 
   setupMap();
-
+  
 
   $scope.divToggle = function(a){
-    $scope.toggle.map = false;
-    $scope.toggle.first = false;
-    $scope.toggle.second = false;
-    $scope.toggle.third= false;  
+    // $scope.toggle.map = false;
+    // $scope.toggle.first = false;
+    // $scope.toggle.second = false;
+    // $scope.toggle.third= false;  
     a = true;
-    return $scope.toggle;
   };
 
    function initMap(){
