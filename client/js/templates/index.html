@@ -8,26 +8,26 @@
           <input id="pac-input" class="controls" type="text"
               placeholder="Enter a location">
               <!-- google map -->
-          <div id="map" ng-show="toggle.map" ng-model="toggle.map"></div>
+          <div id="map" ng-show="toggle.map"></div>
       </div>
-      <div class="col-xs-2" ng-hide="data == undefined">
-        <button class="informationBtn" ng-click="divToggle(toggle.map)">
+      <div class="col-xs-2">
+        <button class="informationBtn" ng-click="divToggle('map')">
         <span>Map</span>
         </button>
-        <button class="informationBtn" ng-model="toggle.first" ng-click="divToggle(toggle.first)">
+        <button class="informationBtn"  ng-click="divToggle('first')">
         <span>Air Quality</span>
         </button>
-        <button class="informationBtn" ng-model="toggle.second" ng-click="divToggle(toggle.second)">
+        <button class="informationBtn" ng-click="divToggle('second')">
         <span>Solar Efficency</span>
         </button>
-        <button class="informationBtn" ng-model="toggle.third" ng-click="divToggle(toggle.third)">
+        <button class="informationBtn" ng-click="divToggle('third')">
         <span>Climate</span>
         </button>
       </div>
       <div class="col-xs-12">
         <!-- Air Quality Info -->
             
-          <div class="dataWrapper" ng-model="toggle.first" ng-show="toggle.first">
+          <div class="dataWrapper" ng-show="toggle.first">
           <div class="row">
               <div class="col-xs-6" id="gaugeContainer">
                 <div id="gauge">Gauge will render</div>
@@ -52,7 +52,7 @@
             </div>
           </div>
           <!-- aside buttons...toogle between information -->
-          <div class="dataWrapper" ng-model="toggle.second" ng-show="toggle.second">
+          <div class="dataWrapper" ng-show="toggle.second">
             <div class="row">
             <div class="col-xs-12">
               <div id="chart-container">FusionCharts will render here</div>
@@ -93,7 +93,7 @@
             </div>
           </div>
         
-          <div class="dataWrapper" ng-model="toggle.third" ng-show="toggle.third">
+          <div class="dataWrapper" ng-show="toggle.third">
           <!-- below hadstyle of class  solarInfo weatherWrapper-->
             <div class="col-xs-12 weatherWrapper">
               <div class="row firstWeatherRow">

@@ -255,14 +255,16 @@ removeGauge = function(){
   });
 
   setupMap();
-  
-
+  // work on fixing css positioning of BTNS
+  var navBar = ['map', 'first','second','third'];
   $scope.divToggle = function(a){
-    // $scope.toggle.map = false;
-    // $scope.toggle.first = false;
-    // $scope.toggle.second = false;
-    // $scope.toggle.third= false;  
-    a = true;
+    for (var item in navBar){
+        if (navBar[item] === a){
+            $scope.toggle[navBar[item]] = true;
+        } else {
+          $scope.toggle[navBar[item]] = false;
+        }
+      }
   };
 
    function initMap(){
