@@ -260,10 +260,14 @@ rect{
   width: 100%;
 }
 .singleWeatherWrapper{
-  height: 155px;
+  /*height: 155px;
   width: 33%;
   background-color: #87CEFA;
-  padding-top: 25px;
+  padding-top: 25px;*/
+  background-color: #87CEFA;
+  display: flex;
+  height: 155px;
+  flex-direction: row;
 }
 .firstWeatherRow .thirdWeatherRow{
   height: 40%;
@@ -293,7 +297,7 @@ rect{
 }
 .climateInfo{
   font-size: 40px;
-  padding-left: 30px;
+  padding: 15px;
 }
 .airPres{
   padding-left: 60px;
